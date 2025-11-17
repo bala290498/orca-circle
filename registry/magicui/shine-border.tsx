@@ -2,94 +2,60 @@
 
 import { cn } from "@/lib/utils";
 
+type TColorProp = string | string[];
+
 interface ShineBorderProps {
   borderRadius?: number;
   borderWidth?: number;
   duration?: number;
-  color?: string | string[];
+  color?: TColorProp;
   className?: string;
   children: React.ReactNode;
 }
 
+/**
+ * @name Shine Border
+ * @description It is an animated background border effect component with easy to use and configurable props.
+ * @param borderRadius defines the radius of the border.
+ * @param borderWidth defines the width of the border.
+ * @param duration defines the animation duration to be applied on the shining border
+ * @param color a string or string array to define border color.
+ * @param className defines the class name to be applied to the component
+ * @param children contains react node elements.
+ */
 export function ShineBorder({
   borderRadius = 8,
-  borderWidth = 2,
+  borderWidth = 1,
   duration = 14,
-  color = "#ffffff",
+  color = "#000000",
   className,
   children,
 }: ShineBorderProps) {
-  const borderSize = borderWidth;
-  const innerRadius = Math.max(0, borderRadius - borderSize);
-
   return (
     <div
       style={
         {
           "--border-radius": `${borderRadius}px`,
-          "--inner-radius": `${innerRadius}px`,
-          "--border-width": `${borderSize}px`,
-          "--shimmer-duration": `${duration}s`,
         } as React.CSSProperties
       }
       className={cn(
-        "relative w-full",
+        "relative min-h-[60px] w-fit min-w-[300px] place-items-center rounded-[--border-radius] bg-white p-3 text-black dark:bg-black dark:text-white",
         className
       )}
     >
-      {/* Gradient border - uniform on all four sides using box-shadow technique */}
       <div
-        className="absolute inset-0 rounded-[var(--border-radius)]"
-        style={{
-          background: Array.isArray(color)
-            ? `linear-gradient(135deg, ${color.join(", ")})`
-            : color,
-          padding: `${borderSize}px`,
-          boxSizing: "border-box",
-          zIndex: 0,
-        }}
-      >
-        {/* Inner white background - masks center, reveals uniform border on all sides */}
-        <div 
-          className="h-full w-full rounded-[var(--inner-radius)]"
-          style={{
-            backgroundColor: "white",
-            boxSizing: "border-box",
-          }}
-        />
-      </div>
-
-      {/* Shimmer animation - uniform across all borders including top and bottom */}
-      <div 
-        className="absolute inset-0 rounded-[var(--border-radius)] overflow-hidden pointer-events-none"
-        style={{
-          zIndex: 1,
-        }}
-      >
-        {/* Shimmer visible across entire border area - no padding to ensure full visibility */}
-        <div
-          className="absolute animate-shimmer"
-          style={{
-            width: "300%",
-            height: "300%",
-            top: "50%",
-            left: "50%",
-            marginTop: "-150%",
-            marginLeft: "-150%",
-            background: `linear-gradient(45deg, transparent 35%, rgba(255,255,255,0.95) 50%, transparent 65%)`,
-            willChange: "transform",
-          }}
-        />
-      </div>
-
-      {/* Content wrapper - positioned inside with uniform spacing on all sides */}
-      <div
-        className="relative z-10 w-full h-full rounded-[var(--inner-radius)] overflow-hidden"
-        style={{
-          margin: `${borderSize}px`,
-          boxSizing: "border-box",
-        }}
-      >
+        style={
+          {
+            "--border-width": `${borderWidth}px`,
+            "--border-radius": `${borderRadius}px`,
+            "--duration": `${duration}s`,
+            "--mask-linear-gradient": `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
+            "--background-radial-gradient": `radial-gradient(transparent,transparent, ${color instanceof Array ? color.join(",") : color},transparent,transparent)`,
+          } as React.CSSProperties
+        }
+        className={`before:bg-shine-size before:absolute before:inset-0 before:aspect-square before:size-full before:rounded-[--border-radius] before:p-[--border-width] before:will-change-[background-position] before:content-[""] before:![-webkit-mask-composite:xor] before:![mask-composite:exclude] before:[background-image:--background-radial-gradient] before:[background-size:300%_300%] before:[mask:--mask-linear-gradient] motion-safe:before:animate-shine`}
+      ></div>
+      <div className="relative z-10">
         {children}
       </div>
     </div>

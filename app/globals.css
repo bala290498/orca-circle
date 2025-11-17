@@ -29,18 +29,25 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Shimmer animation for ShineBorder */
-@keyframes shimmer {
+/* Shine animation for ShineBorder */
+@keyframes shine {
   0% {
-    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
   }
   100% {
-    transform: translateX(100%) translateY(100%) rotate(45deg);
+    background-position: 0% 0%;
   }
 }
 
-.animate-shimmer {
-  animation: shimmer var(--shimmer-duration, 14s) infinite linear;
+.animate-shine {
+  animation: shine var(--duration, 14s) ease-in-out infinite;
+}
+
+.bg-shine-size {
+  background-size: 300% 300%;
 }
 
 /* Accordion animations */
@@ -69,3 +76,4 @@ html {
 .animate-accordion-up {
   animation: accordion-up 0.2s ease-out;
 }
+
