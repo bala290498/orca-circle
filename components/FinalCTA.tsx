@@ -5,7 +5,7 @@ import { useModal } from "@/contexts/ModalContext";
 export default function FinalCTA() {
   const { openModal } = useModal();
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white">
+    <section className="py-20 bg-gradient-to-br from-primary-600 via-secondary-600 to-primary-800 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -17,13 +17,13 @@ export default function FinalCTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={openModal}
-              className="bg-white text-primary-600 hover:bg-primary-50 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto"
+              className="bg-gradient-to-r from-white to-secondary-50 text-primary-600 hover:from-white hover:to-secondary-100 font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto"
             >
               Join the Community (Free Forever)
             </button>
             <a
               href="#how-it-works"
-              className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 w-full sm:w-auto"
+              className="bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-white/10 hover:to-secondary-500/20 font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 w-full sm:w-auto"
             >
               Learn How It Works
             </a>

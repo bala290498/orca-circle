@@ -57,7 +57,7 @@ export default function MemberBenefits() {
           <div className="text-center">
             <button
               onClick={openModal}
-              className="inline-block bg-white text-primary-600 hover:bg-primary-50 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-block bg-gradient-to-r from-white to-secondary-50 text-primary-600 hover:from-white hover:to-secondary-100 font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 border-secondary-300/50"
             >
               Start Receiving Benefits
             </button>

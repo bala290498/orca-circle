@@ -5,7 +5,7 @@ import { useModal } from "@/contexts/ModalContext";
 export default function SolutionSection() {
   const { openModal } = useModal();
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-white via-primary-50/50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
@@ -17,7 +17,7 @@ export default function SolutionSection() {
 
           {/* Highlights Grid */}
           <div className="grid md:grid-cols-2 gap-6 mb-10">
-            <div className="bg-primary-50 rounded-lg p-6 border-l-4 border-primary-600">
+            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-6 border-l-4 border-primary-600 hover:shadow-lg transition-all duration-300">
               <div className="flex items-center mb-2">
                 <svg
                   className="w-6 h-6 text-primary-600 mr-2"
@@ -38,7 +38,7 @@ export default function SolutionSection() {
               </div>
             </div>
 
-            <div className="bg-primary-50 rounded-lg p-6 border-l-4 border-primary-600">
+            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-6 border-l-4 border-primary-600 hover:shadow-lg transition-all duration-300">
               <div className="flex items-center mb-2">
                 <svg
                   className="w-6 h-6 text-primary-600 mr-2"
@@ -59,7 +59,7 @@ export default function SolutionSection() {
               </div>
             </div>
 
-            <div className="bg-primary-50 rounded-lg p-6 border-l-4 border-primary-600">
+            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-6 border-l-4 border-primary-600 hover:shadow-lg transition-all duration-300">
               <div className="flex items-center mb-2">
                 <svg
                   className="w-6 h-6 text-primary-600 mr-2"
@@ -80,7 +80,7 @@ export default function SolutionSection() {
               </div>
             </div>
 
-            <div className="bg-primary-50 rounded-lg p-6 border-l-4 border-primary-600">
+            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-6 border-l-4 border-primary-600 hover:shadow-lg transition-all duration-300">
               <div className="flex items-center mb-2">
                 <svg
                   className="w-6 h-6 text-primary-600 mr-2"
@@ -106,7 +106,7 @@ export default function SolutionSection() {
           <div className="text-center">
             <button
               onClick={openModal}
-              className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-block bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Become an Active Member
             </button>

@@ -20,11 +20,27 @@ module.exports = {
           800: '#075985',
           900: '#0c4a6e',
         },
+        secondary: {
+          50: '#e6f9ff',
+          100: '#b3f0ff',
+          200: '#80e7ff',
+          300: '#4ddeff',
+          400: '#1ad5ff',
+          500: '#5de0e6',
+          600: '#00c2d9',
+          700: '#0099b3',
+          800: '#00708d',
+          900: '#004aad',
+        },
+      },
+      backgroundImage: {
+        'secondary-gradient': 'linear-gradient(135deg, #5de0e6 0%, #004aad 100%)',
       },
       animation: {
         'star-movement-bottom': 'star-movement-bottom linear infinite alternate',
         'star-movement-top': 'star-movement-top linear infinite alternate',
         'shine': 'shine var(--duration, 14s) ease-in-out infinite',
+        'shine-pulse': 'shine-pulse var(--shine-pulse-duration, 14s) infinite linear',
       },
       keyframes: {
         'star-movement-bottom': {
@@ -36,6 +52,11 @@ module.exports = {
           '100%': { transform: 'translate(100%, 0%)', opacity: '0' },
         },
         'shine': {
+          '0%': { backgroundPosition: '0% 0%' },
+          '50%': { backgroundPosition: '100% 100%' },
+          '100%': { backgroundPosition: '0% 0%' },
+        },
+        'shine-pulse': {
           '0%': { backgroundPosition: '0% 0%' },
           '50%': { backgroundPosition: '100% 100%' },
           '100%': { backgroundPosition: '0% 0%' },

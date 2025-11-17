@@ -204,7 +204,7 @@ export default function JoinFormModal({ isOpen, onClose }: JoinFormModalProps) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
               {isSubmitting ? "Submitting..." : "Join Now (Free Forever)"}
             </button>

@@ -3,7 +3,12 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { ModalProvider } from '@/contexts/ModalContext'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ 
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Orca Circle - Grow Your Business With Community Power',
@@ -16,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <body className={inter.className}>
         <ModalProvider>
           {children}

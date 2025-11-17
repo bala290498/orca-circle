@@ -37,9 +37,9 @@ export default function BusinessPillars() {
                 borderWidth={2}
                 duration={14}
                 color={pillar.color}
-                className="w-full min-w-0 h-full flex flex-col"
+                className="w-full min-w-0 h-full"
               >
-                <div className="p-8 flex-1 flex flex-col relative z-10">
+                <div className="p-8 flex-1 flex flex-col h-full">
                   <div className="text-4xl font-bold text-primary-600 mb-4">
                     {pillar.number}
                   </div>
