@@ -81,11 +81,11 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
         <div className="p-8 text-center">
           <div className="mb-6">
             <div className="text-6xl mb-4">🎉</div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Welcome to Orca Circle!
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              Welcome to
             </h2>
-            <p className="text-xl text-primary-600 font-semibold mb-6">
-              Orca circle
+            <p className="text-3xl font-bold text-gray-900 mb-2">
+              Orca Circle{userName ? `, ${userName}` : ''}!
             </p>
           </div>
 
@@ -105,37 +105,8 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
                 />
               </svg>
               <div>
-                <p className="text-green-800 font-medium mb-2">
-                  Thank you for joining our community!
-                </p>
-                <p className="text-green-700 text-sm">
-                  Your registration has been successfully submitted. We're excited to have you as part of the Orca Circle family!
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6 text-left">
-            <div className="flex items-start">
-              <svg
-                className="w-6 h-6 text-blue-600 mr-3 flex-shrink-0 mt-0.5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <div>
-                <p className="text-blue-800 font-medium mb-2">
-                  Next Steps
-                </p>
-                <p className="text-blue-700 text-sm">
-                  WhatsApp should open on its own. If not, tap the button below.
+                <p className="text-green-800 font-medium">
+                  Registration successful, Open WhatsApp to join.
                 </p>
               </div>
             </div>
