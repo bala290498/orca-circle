@@ -37,17 +37,17 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2">
             Frequently Asked Questions
           </h2>
           <Accordion
             type="single"
             collapsible
             defaultValue="item-0"
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>

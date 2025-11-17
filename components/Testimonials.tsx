@@ -87,16 +87,16 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2">
             What Our Members Say
           </h2>
-          <div className="mx-auto w-full max-w-3xl text-center">
-            <div className="relative h-32">
-              <div className="pointer-events-none absolute left-1/2 top-0 h-[480px] w-[480px] -translate-x-1/2 before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-b before:from-primary-500/25 before:via-primary-500/5 before:via-25% before:to-primary-500/0 before:to-75%">
-                <div className="h-32 [mask-image:_linear-gradient(0deg,transparent,theme(colors.white)_20%,theme(colors.white))]">
+          <div className="mx-auto w-full max-w-3xl text-center px-2">
+            <div className="relative h-24 sm:h-32">
+              <div className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-[300px] sm:h-[480px] sm:w-[480px] -translate-x-1/2 before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-b before:from-primary-500/25 before:via-primary-500/5 before:via-25% before:to-primary-500/0 before:to-75%">
+                <div className="h-24 sm:h-32 [mask-image:_linear-gradient(0deg,transparent,theme(colors.white)_20%,theme(colors.white))]">
                   {testimonials.map((testimonial, index) => (
                     <Transition
                       as="div"
@@ -112,7 +112,7 @@ export default function Testimonials() {
                       beforeEnter={() => heightFix()}
                     >
                       <Image
-                        className="relative left-1/2 top-11 -translate-x-1/2 rounded-full"
+                        className="relative left-1/2 top-8 sm:top-11 -translate-x-1/2 rounded-full"
                         src={testimonial.img}
                         width={56}
                         height={56}
@@ -123,7 +123,7 @@ export default function Testimonials() {
                 </div>
               </div>
             </div>
-            <div className="mb-9 transition-all delay-300 duration-150 ease-in-out">
+            <div className="mb-6 sm:mb-9 transition-all delay-300 duration-150 ease-in-out px-2">
               <div className="relative flex flex-col" ref={testimonialsRef}>
                 {testimonials.map((testimonial, index) => (
                   <Transition
@@ -137,18 +137,18 @@ export default function Testimonials() {
                     leaveTo="opacity-0 translate-x-4"
                     beforeEnter={() => heightFix()}
                   >
-                    <div className="text-2xl font-bold text-primary-900 before:content-['\201C'] after:content-['\201D']">
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary-900 before:content-['\201C'] after:content-['\201D'] px-2">
                       {testimonial.quote}
                     </div>
                   </Transition>
                 ))}
               </div>
             </div>
-            <div className="-m-1.5 flex flex-wrap justify-center">
+            <div className="-m-1.5 flex flex-wrap justify-center px-2">
               {testimonials.map((testimonial, index) => (
                 <button
                   key={index}
-                  className={`m-1.5 inline-flex justify-center whitespace-nowrap rounded-full px-3 py-1.5 text-xs shadow-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring focus-visible:ring-primary-300 ${
+                  className={`m-1.5 inline-flex justify-center whitespace-nowrap rounded-full px-2 sm:px-3 py-1.5 text-xs shadow-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring focus-visible:ring-primary-300 min-h-[32px] ${
                     active === index
                       ? "bg-primary-500 text-white shadow-primary-950/10"
                       : "bg-white text-primary-900 hover:bg-primary-100"

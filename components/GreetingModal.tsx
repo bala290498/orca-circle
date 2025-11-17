@@ -78,21 +78,21 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
         </button>
 
         {/* Greeting Content */}
-        <div className="p-8 text-center">
-          <div className="mb-6">
-            <div className="text-6xl mb-4">🎉</div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+        <div className="p-4 sm:p-6 md:p-8 text-center">
+          <div className="mb-4 sm:mb-6">
+            <div className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4">🎉</div>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
               Welcome to
             </h2>
-            <p className="text-3xl font-bold text-gray-900 mb-2">
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 px-2">
               Orca Circle{userName ? `, ${userName}` : ''}!
             </p>
           </div>
 
-          <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6 text-left">
-            <div className="flex items-start mb-4">
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6 text-left">
+            <div className="flex items-start">
               <svg
-                className="w-6 h-6 text-green-600 mr-3 flex-shrink-0 mt-0.5"
+                className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 mr-2 sm:mr-3 flex-shrink-0 mt-0.5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -105,7 +105,7 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
                 />
               </svg>
               <div>
-                <p className="text-green-800 font-medium">
+                <p className="text-sm sm:text-base text-green-800 font-medium">
                   Registration successful, Open WhatsApp to join.
                 </p>
               </div>
@@ -116,7 +116,7 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
           {showWhatsAppButton && (
             <button
               onClick={openWhatsApp}
-              className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+              className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 min-h-[44px] text-base sm:text-lg"
             >
               <svg
                 className="w-5 h-5"

@@ -18,25 +18,25 @@ export default function MemberBenefits() {
   ]
 
   return (
-    <section id="benefits" className="py-20 bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+    <section id="benefits" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-primary-50/30 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 text-center px-2">
             Your Activity = Real Rewards
           </h2>
-          <p className="text-xl text-primary-100 mb-10 text-center">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-8 sm:mb-10 text-center px-2">
             Benefits Include:
           </p>
 
-          <div className="grid md:grid-cols-2 gap-4 mb-10">
+          <div className="grid md:grid-cols-2 gap-3 sm:gap-4 mb-8 sm:mb-10">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 hover:bg-white/20 transition-all duration-300"
+                className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-lg p-3 sm:p-4 border-l-4 border-primary-600 hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-start">
                   <svg
-                    className="w-6 h-6 text-primary-200 mr-3 flex-shrink-0 mt-0.5"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600 mr-2 sm:mr-3 flex-shrink-0 mt-0.5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -48,16 +48,16 @@ export default function MemberBenefits() {
                       d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                     />
                   </svg>
-                  <p className="text-primary-50">{benefit}</p>
+                  <p className="text-sm sm:text-base text-gray-800">{benefit}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="text-center">
+          <div className="text-center px-2">
             <button
               onClick={openModal}
-              className="inline-block bg-gradient-to-r from-white to-secondary-50 text-primary-600 hover:from-white hover:to-secondary-100 font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 border-secondary-300/50"
+              className="w-full sm:w-auto bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-h-[44px]"
             >
               Start Receiving Benefits
             </button>

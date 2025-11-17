@@ -8,21 +8,21 @@ export default function WhyThisWorks() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-50 via-secondary-50/30 to-white">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-primary-50 via-secondary-50/30 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2">
             Why This Works
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {points.map((point, index) => (
               <div
                 key={index}
-                className="flex items-start bg-gradient-to-r from-white to-secondary-50/50 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-secondary-100"
+                className="flex items-start bg-gradient-to-r from-white to-secondary-50/50 rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-secondary-100"
               >
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-primary-600 to-secondary-500 rounded-full flex items-center justify-center mr-4">
+                <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-primary-600 to-secondary-500 rounded-full flex items-center justify-center mr-3 sm:mr-4">
                   <svg
-                    className="w-5 h-5 text-white"
+                    className="w-4 h-4 sm:w-5 sm:h-5 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -35,7 +35,7 @@ export default function WhyThisWorks() {
                     />
                   </svg>
                 </div>
-                <p className="text-lg text-gray-800 font-medium">{point}</p>
+                <p className="text-base sm:text-lg text-gray-800 font-medium">{point}</p>
               </div>
             ))}
           </div>
