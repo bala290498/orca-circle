@@ -15,8 +15,6 @@ export default function JoinFormModal({ isOpen, onClose }: JoinFormModalProps) {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
-  const [showGreeting, setShowGreeting] = useState(false);
-  const [submittedName, setSubmittedName] = useState("");
   
   const GROUP_HEAD_NUMBER = "7010584543"; // Group head WhatsApp number
 
@@ -56,7 +54,6 @@ export default function JoinFormModal({ isOpen, onClose }: JoinFormModalProps) {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus("idle");
-    setShowGreeting(false);
 
     // Submit to Supabase via API route
     try {
@@ -72,32 +69,28 @@ export default function JoinFormModal({ isOpen, onClose }: JoinFormModalProps) {
         throw new Error("Failed to submit form");
       }
 
-      // Save form data for WhatsApp message and greeting before clearing
+      // Save form data for WhatsApp message before clearing
       const { name, whatsapp } = formData;
-      setSubmittedName(name);
       
-      // Show greeting message immediately
-      setSubmitStatus("success");
-      setShowGreeting(true);
-      
-      // Clear form after showing greeting
+      // Clear form
       setFormData({ name: "", email: "", whatsapp: "" });
+      
+      // Close form modal
+      setSubmitStatus("success");
+      setIsSubmitting(false);
+      onClose();
+      
+      // Trigger greeting modal via custom event with user data
+      window.dispatchEvent(new CustomEvent('showGreeting', { 
+        detail: { name, whatsapp } 
+      }));
       
       // Wait 2 seconds, then open WhatsApp
       setTimeout(() => {
         openWhatsApp(name, whatsapp);
-        
-        // Close modal after opening WhatsApp
-        setTimeout(() => {
-          setShowGreeting(false);
-          setSubmittedName("");
-          setSubmitStatus("idle");
-          onClose();
-        }, 500);
       }, 2000);
     } catch (error) {
       setSubmitStatus("error");
-      setShowGreeting(false);
     } finally {
       setIsSubmitting(false);
     }
@@ -198,19 +191,9 @@ export default function JoinFormModal({ isOpen, onClose }: JoinFormModalProps) {
                 placeholder="Enter your WhatsApp number"
               />
             </div>
-            {submitStatus === "success" && showGreeting && (
-              <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg space-y-2">
-                <div className="font-semibold text-lg">
-                  🎉 Welcome to Orca Circle, {submittedName || "there"}!
-                </div>
-                <div>
-                  Thank you for joining our community! We're opening WhatsApp for you to connect with your group head.
-                </div>
-              </div>
-            )}
-            {submitStatus === "success" && !showGreeting && (
+            {submitStatus === "success" && (
               <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
-                Thank you! We'll be in touch soon.
+                Form submitted successfully!
               </div>
             )}
             {submitStatus === "error" && (
