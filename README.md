@@ -28,12 +28,22 @@ A Next.js landing page for Orca Circle, a community-driven business growth platf
 npm install
 ```
 
-2. Run the development server:
+2. Set up environment variables:
+```bash
+# The .env.local file has been created with Supabase credentials
+# ⚠️ IMPORTANT: Add your Service Role Key manually:
+# - Go to: https://app.supabase.com/project/gltfmcqkttszqoaodjbf/settings/api
+# - Copy the `service_role` key and replace `your_service_role_key_here` in .env.local
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+For detailed Supabase setup information, see [SUPABASE_SETUP.md](./SUPABASE_SETUP.md).
 
 ## Build
 
@@ -49,3 +59,6 @@ npm start
 - React 18
 - TypeScript
 - Tailwind CSS
+- Supabase (Database & Backend)
+- Radix UI (UI Components)
+- Headless UI (Transitions)

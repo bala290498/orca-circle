@@ -1,4 +1,9 @@
+"use client";
+
+import { useModal } from "@/contexts/ModalContext";
+
 export default function SolutionSection() {
+  const { openModal } = useModal();
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,12 +104,12 @@ export default function SolutionSection() {
 
           {/* CTA */}
           <div className="text-center">
-            <a
-              href="#membership"
+            <button
+              onClick={openModal}
               className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Become an Active Member
-            </a>
+            </button>
           </div>
         </div>
       </div>

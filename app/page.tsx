@@ -1,3 +1,5 @@
+"use client";
+
 import HeroSection from '@/components/HeroSection'
 import ProblemSection from '@/components/ProblemSection'
 import SolutionSection from '@/components/SolutionSection'
@@ -10,8 +12,12 @@ import CommunityStructure from '@/components/CommunityStructure'
 import Testimonials from '@/components/Testimonials'
 import FAQ from '@/components/FAQ'
 import FinalCTA from '@/components/FinalCTA'
+import JoinFormModal from '@/components/JoinFormModal'
+import { useModal } from '@/contexts/ModalContext'
 
 export default function Home() {
+  const { isModalOpen, closeModal } = useModal();
+
   return (
     <main className="min-h-screen">
       {/* 1. Hero Section */}
@@ -49,6 +55,9 @@ export default function Home() {
 
       {/* 12. Final Call to Action */}
       <FinalCTA />
+
+      {/* Global Join Form Modal */}
+      <JoinFormModal isOpen={isModalOpen} onClose={closeModal} />
     </main>
   )
 }

@@ -1,4 +1,9 @@
+"use client";
+
+import { useModal } from "@/contexts/ModalContext";
+
 export default function MemberBenefits() {
+  const { openModal } = useModal();
   const benefits = [
     'Flipkart gift vouchers (Flipkart – an Indian electronic commerce website)',
     'Amazon gift vouchers (Amazon – a global online retail marketplace)',
@@ -50,12 +55,12 @@ export default function MemberBenefits() {
           </div>
 
           <div className="text-center">
-            <a
-              href="#membership"
+            <button
+              onClick={openModal}
               className="inline-block bg-white text-primary-600 hover:bg-primary-50 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Start Receiving Benefits
-            </a>
+            </button>
           </div>
         </div>
       </div>

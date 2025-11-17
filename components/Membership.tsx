@@ -1,4 +1,10 @@
+"use client";
+
+import { useModal } from "@/contexts/ModalContext";
+
 export default function Membership() {
+  const { openModal } = useModal();
+
   return (
     <section id="membership" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +18,7 @@ export default function Membership() {
           <p className="text-2xl font-semibold text-primary-600 mb-10">
             Every active member earns — without spending a single rupee.
           </p>
-          <div className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-lg p-8 border-2 border-primary-200">
+          <div className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-lg p-8 border-2 border-primary-200 mb-10">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-2xl font-bold text-gray-900">
               <svg
                 className="w-10 h-10 text-primary-600"
@@ -34,8 +40,16 @@ export default function Membership() {
               <span>No Subscription</span>
             </div>
           </div>
+
+          {/* Join Button */}
+          <button
+            onClick={openModal}
+            className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            Join the Community Today
+          </button>
         </div>
       </div>
     </section>
-  )
+  );
 }

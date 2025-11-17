@@ -1,4 +1,9 @@
+"use client";
+
+import { useModal } from "@/contexts/ModalContext";
+
 export default function FinalCTA() {
+  const { openModal } = useModal();
   return (
     <section className="py-20 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,12 +15,12 @@ export default function FinalCTA() {
             Start earning rewards, growing your business, and building connections today — completely free.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href="#membership"
+            <button
+              onClick={openModal}
               className="bg-white text-primary-600 hover:bg-primary-50 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto"
             >
               Join the Community (Free Forever)
-            </a>
+            </button>
             <a
               href="#how-it-works"
               className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 w-full sm:w-auto"
