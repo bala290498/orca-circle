@@ -1,30 +1,90 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
+
+import Image from "next/image";
+
+import { Transition } from "@headlessui/react";
+
+interface Testimonial {
+  img: string;
+  quote: string;
+  name: string;
+  role: string;
+}
+
 export default function Testimonials() {
-  const testimonials = [
+  // Generate avatar URL based on name
+  const getAvatarUrl = (name: string) => {
+    return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=56&background=random&color=fff&bold=true&rounded=true`;
+  };
+
+  const testimonials: Testimonial[] = [
     {
-      name: 'Priya Sharma',
-      role: 'Small Business Owner',
-      content: 'In just 2 months, my Instagram followers grew from 200 to 5000! The community engagement is real and authentic.',
-      rating: 5,
+      img: getAvatarUrl("Kumar"),
+      quote: "The community engagement is real and authentic. I've made real connections.",
+      name: "Kumar",
+      role: "Member",
     },
     {
-      name: 'Raj Patel',
-      role: 'E-commerce Entrepreneur',
-      content: 'I received my first Flipkart voucher within a month. The rewards are genuine, and the community is incredibly supportive.',
-      rating: 5,
+      img: getAvatarUrl("Priyanka"),
+      quote: "I received my first Flipkart voucher within a month. The rewards are genuine, and the community is incredibly supportive.",
+      name: "Priyanka",
+      role: "Member",
     },
     {
-      name: 'Anita Kumar',
-      role: 'Content Creator',
-      content: 'As a group head, I love coordinating activities. The extra benefits make it worthwhile, and I\'ve made real connections.',
-      rating: 5,
+      img: getAvatarUrl("Shan Walsh"),
+      quote: "As a group head, I love coordinating activities. The extra benefits make it worthwhile, and I've made real connections.",
+      name: "Shan Walsh",
+      role: "Group Head",
     },
     {
-      name: 'Vikram Singh',
-      role: 'Startup Founder',
-      content: 'The cold start problem was killing my business. This community gave me instant visibility without spending a rupee.',
-      rating: 5,
+      img: getAvatarUrl("Hemalatha"),
+      quote: "The community support helped my business gain instant visibility. Best part? It's completely free!",
+      name: "Hemalatha",
+      role: "Member",
     },
-  ]
+    {
+      img: getAvatarUrl("Prabhu"),
+      quote: "Amazing rewards system! I've received multiple gift vouchers just by staying active in the community.",
+      name: "Prabhu",
+      role: "Member",
+    },
+    {
+      img: getAvatarUrl("Sugavanesh"),
+      quote: "Leading a group has been rewarding. The extra benefits and networking opportunities are unmatched.",
+      name: "Sugavanesh",
+      role: "Group Head",
+    },
+    {
+      img: getAvatarUrl("Nandhini"),
+      quote: "From zero visibility to consistent engagement in weeks! This community changed my business trajectory.",
+      name: "Nandhini",
+      role: "Member",
+    },
+  ];
+
+  const testimonialsRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState<number>(0);
+  const [autorotate, setAutorotate] = useState<boolean>(true);
+  const autorotateTiming: number = 7000;
+
+  useEffect(() => {
+    if (!autorotate) return;
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1 === testimonials.length ? 0 : prev + 1));
+    }, autorotateTiming);
+    return () => clearInterval(interval);
+  }, [active, autorotate, testimonials.length]);
+
+  const heightFix = () => {
+    if (testimonialsRef.current && testimonialsRef.current.parentElement)
+      testimonialsRef.current.parentElement.style.height = `${testimonialsRef.current.clientHeight}px`;
+  };
+
+  useEffect(() => {
+    heightFix();
+  }, []);
 
   return (
     <section className="py-20 bg-white">
@@ -33,36 +93,86 @@ export default function Testimonials() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
             What Our Members Say
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300 border-l-4 border-primary-600"
-              >
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg
-                      key={i}
-                      className="w-5 h-5 text-yellow-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
+          <div className="mx-auto w-full max-w-3xl text-center">
+            <div className="relative h-32">
+              <div className="pointer-events-none absolute left-1/2 top-0 h-[480px] w-[480px] -translate-x-1/2 before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-b before:from-primary-500/25 before:via-primary-500/5 before:via-25% before:to-primary-500/0 before:to-75%">
+                <div className="h-32 [mask-image:_linear-gradient(0deg,transparent,theme(colors.white)_20%,theme(colors.white))]">
+                  {testimonials.map((testimonial, index) => (
+                    <Transition
+                      as="div"
+                      key={index}
+                      show={active === index}
+                      className="absolute inset-0 -z-10 h-full"
+                      enter="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700 order-first"
+                      enterFrom="opacity-0 -rotate-[60deg]"
+                      enterTo="opacity-100 rotate-0"
+                      leave="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700"
+                      leaveFrom="opacity-100 rotate-0"
+                      leaveTo="opacity-0 rotate-[60deg]"
+                      beforeEnter={() => heightFix()}
                     >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+                      <Image
+                        className="relative left-1/2 top-11 -translate-x-1/2 rounded-full"
+                        src={testimonial.img}
+                        width={56}
+                        height={56}
+                        alt={testimonial.name}
+                      />
+                    </Transition>
                   ))}
                 </div>
-                <p className="text-gray-700 mb-4 leading-relaxed">
-                  "{testimonial.content}"
-                </p>
-                <div>
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
-                </div>
               </div>
-            ))}
+            </div>
+            <div className="mb-9 transition-all delay-300 duration-150 ease-in-out">
+              <div className="relative flex flex-col" ref={testimonialsRef}>
+                {testimonials.map((testimonial, index) => (
+                  <Transition
+                    key={index}
+                    show={active === index}
+                    enter="transition ease-in-out duration-500 delay-200 order-first"
+                    enterFrom="opacity-0 -translate-x-4"
+                    enterTo="opacity-100 translate-x-0"
+                    leave="transition ease-out duration-300 delay-300 absolute"
+                    leaveFrom="opacity-100 translate-x-0"
+                    leaveTo="opacity-0 translate-x-4"
+                    beforeEnter={() => heightFix()}
+                  >
+                    <div className="text-2xl font-bold text-primary-900 before:content-['\201C'] after:content-['\201D']">
+                      {testimonial.quote}
+                    </div>
+                  </Transition>
+                ))}
+              </div>
+            </div>
+            <div className="-m-1.5 flex flex-wrap justify-center">
+              {testimonials.map((testimonial, index) => (
+                <button
+                  key={index}
+                  className={`m-1.5 inline-flex justify-center whitespace-nowrap rounded-full px-3 py-1.5 text-xs shadow-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring focus-visible:ring-primary-300 ${
+                    active === index
+                      ? "bg-primary-500 text-white shadow-primary-950/10"
+                      : "bg-white text-primary-900 hover:bg-primary-100"
+                  }`}
+                  onClick={() => {
+                    setActive(index);
+                    setAutorotate(false);
+                  }}
+                >
+                  <span>{testimonial.name}</span>{" "}
+                  <span
+                    className={`${
+                      active === index ? "text-primary-200" : "text-primary-300"
+                    }`}
+                  >
+                    -
+                  </span>{" "}
+                  <span>{testimonial.role}</span>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
