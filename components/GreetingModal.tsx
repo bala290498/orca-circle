@@ -145,7 +145,7 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
           {showWhatsAppButton && (
             <button
               onClick={openWhatsApp}
-              className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mb-4 flex items-center justify-center gap-2"
+              className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
             >
               <svg
                 className="w-5 h-5"
@@ -157,13 +157,6 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
               Open WhatsApp
             </button>
           )}
-
-          <button
-            onClick={onClose}
-            className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-          >
-            Got it! Close
-          </button>
         </div>
       </div>
     </div>
