@@ -85,7 +85,7 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
               Welcome to Orca Circle!
             </h2>
             <p className="text-xl text-primary-600 font-semibold mb-6">
-              Hello, {userName || "there"}!
+              Orca circle
             </p>
           </div>
 
