@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 sm:mb-12">
           {/* About Column */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 text-center md:text-left pb-6 md:pb-0 border-b md:border-b-0 md:border-r border-gray-800 pr-0 md:pr-8 lg:pr-12">
             <h3 className="text-white font-semibold text-sm sm:text-base mb-4">About</h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -28,7 +28,7 @@ export default function Footer() {
           </div>
 
           {/* Community Column */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 text-center md:text-left pb-6 md:pb-0 border-b md:border-b-0 md:border-r border-gray-800 pr-0 md:pr-8 lg:pr-12">
             <h3 className="text-white font-semibold text-sm sm:text-base mb-4">Community</h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
           {/* Resources Column */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 text-center md:text-left pb-6 md:pb-0 border-b md:border-b-0 md:border-r border-gray-800 pr-0 md:pr-8 lg:pr-12">
             <h3 className="text-white font-semibold text-sm sm:text-base mb-4">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li>
@@ -72,7 +72,7 @@ export default function Footer() {
           </div>
 
           {/* Legal Column */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 text-center md:text-left">
             <h3 className="text-white font-semibold text-sm sm:text-base mb-4">Legal</h3>
             <ul className="space-y-2 text-sm">
               <li>

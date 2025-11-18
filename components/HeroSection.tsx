@@ -71,7 +71,7 @@ export default function HeroSection() {
               onClick={openModal}
               className="w-full max-w-[280px] sm:max-w-[300px] bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              Join the Community (Free Forever)
+              Join the Community
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}

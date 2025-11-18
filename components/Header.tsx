@@ -7,6 +7,7 @@ export default function Header() {
   const { openModal } = useModal();
   const [isScrolled, setIsScrolled] = useState(false);
   const [hasAnnouncement, setHasAnnouncement] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     let ticking = false;
@@ -50,6 +51,7 @@ export default function Header() {
         top: offsetPosition,
         behavior: "smooth"
       });
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -79,7 +81,7 @@ export default function Header() {
             </a>
           </div>
 
-          {/* Navigation Links */}
+          {/* Navigation Links - Desktop */}
           <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
             <button
               onClick={() => scrollToSection("how-it-works")}
@@ -107,16 +109,71 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Primary CTA */}
-          <div className="flex items-center">
-            <button
-              onClick={openModal}
-              className="bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-1 px-2.5 sm:py-1.5 sm:px-3 rounded-full text-xs transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap"
-            >
-              Join the Community (Free Forever)
-            </button>
-          </div>
+          {/* Hamburger Menu Button - Mobile */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-gray-100 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-gray-200 bg-white">
+            <div className="px-4 pt-2 pb-4 space-y-1">
+              <button
+                onClick={() => scrollToSection("how-it-works")}
+                className="block w-full text-center px-3 py-2 text-base text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors font-medium"
+              >
+                How it works
+              </button>
+              <button
+                onClick={() => scrollToSection("benefits")}
+                className="block w-full text-center px-3 py-2 text-base text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors font-medium"
+              >
+                Benefits
+              </button>
+              <button
+                onClick={() => scrollToSection("testimonials")}
+                className="block w-full text-center px-3 py-2 text-base text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors font-medium"
+              >
+                Testimonials
+              </button>
+              <button
+                onClick={() => scrollToSection("faq")}
+                className="block w-full text-center px-3 py-2 text-base text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors font-medium"
+              >
+                FAQ
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );

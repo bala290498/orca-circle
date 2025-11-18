@@ -57,19 +57,26 @@ export default function CommunityStructure() {
           {/* Visual representation */}
           <div className="mt-8 sm:mt-12 text-center px-2">
             <div className="inline-block bg-primary-100 rounded-lg p-4 sm:p-6">
-              <div className="flex items-center justify-center gap-2 sm:gap-4 flex-wrap">
+              <div className="flex flex-col items-center justify-center gap-3 sm:gap-4">
+                {/* GH Circle - Separate line */}
                 <div className="bg-primary-600 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center font-bold text-xs sm:text-sm md:text-base">
                   GH
                 </div>
-                <span className="text-gray-700 font-semibold text-sm sm:text-base">+</span>
-                {[...Array(10)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="bg-primary-300 text-primary-900 rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center font-bold text-xs sm:text-sm"
-                  >
-                    M{i + 1}
-                  </div>
-                ))}
+                
+                {/* Plus Icon - Separate line */}
+                <span className="text-gray-700 font-semibold text-lg sm:text-xl md:text-2xl">+</span>
+                
+                {/* Member Circles - Separate line */}
+                <div className="flex items-center justify-center gap-2 sm:gap-3 flex-wrap">
+                  {[...Array(10)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="bg-primary-300 text-primary-900 rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center font-bold text-xs sm:text-sm"
+                    >
+                      M{i + 1}
+                    </div>
+                  ))}
+                </div>
               </div>
               <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-600">
                 Group Head (GH) + 10 Members (M) = One Active Group

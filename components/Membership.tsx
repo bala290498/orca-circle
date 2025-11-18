@@ -78,7 +78,7 @@ export default function Membership() {
             </GradientText>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10 px-2">
-            Stay active and Grow with your community.
+            Stay active and Grow with your community
           </p>
           
           {/* Features - Flat Cards in Horizontal Line */}

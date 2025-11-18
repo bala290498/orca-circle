@@ -19,7 +19,7 @@ export default function FinalCTA() {
               onClick={openModal}
               className="w-full max-w-[280px] sm:max-w-[300px] bg-gradient-to-r from-white to-secondary-50 text-primary-600 hover:from-white hover:to-secondary-100 font-semibold py-2.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              Join the Community (Free Forever)
+              Join the Community
             </button>
             <a
               href="#how-it-works"
