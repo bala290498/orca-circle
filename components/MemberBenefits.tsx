@@ -103,10 +103,10 @@ export default function MemberBenefits() {
                 ))}
               </div>
 
-              <div className="text-center lg:text-left">
+              <div className="text-center lg:text-left flex justify-center lg:justify-start">
                 <button
                   onClick={openModal}
-                  className="w-full sm:w-auto bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-2 sm:py-2.5 px-4 sm:px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-h-[36px]"
+                  className="w-full max-w-[280px] sm:max-w-[300px] bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-2.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Start Receiving Benefits
                 </button>

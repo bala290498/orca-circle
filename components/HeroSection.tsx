@@ -66,16 +66,16 @@ export default function HeroSection() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center items-center">
             <button
               onClick={openModal}
-              className="w-full sm:w-auto bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2 sm:py-2.5 px-4 sm:px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-h-[36px]"
+              className="w-full max-w-[280px] sm:max-w-[300px] bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Join the Community (Free Forever)
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}
-              className="w-full sm:w-auto border-2 border-primary-600 text-primary-600 hover:bg-primary-50 font-semibold py-2 sm:py-2.5 px-4 sm:px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 min-h-[36px]"
+              className="w-full max-w-[280px] sm:max-w-[300px] border-2 border-primary-600 text-primary-600 hover:bg-primary-50 font-semibold py-2.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105"
             >
               Learn How It Works
             </button>

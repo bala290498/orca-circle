@@ -17,13 +17,13 @@ export default function FinalCTA() {
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center items-center px-2">
             <button
               onClick={openModal}
-              className="bg-gradient-to-r from-white to-secondary-50 text-primary-600 hover:from-white hover:to-secondary-100 font-semibold py-2 sm:py-2.5 px-4 sm:px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto min-h-[36px]"
+              className="w-full max-w-[280px] sm:max-w-[300px] bg-gradient-to-r from-white to-secondary-50 text-primary-600 hover:from-white hover:to-secondary-100 font-semibold py-2.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Join the Community (Free Forever)
             </button>
             <a
               href="#how-it-works"
-              className="bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-white/10 hover:to-secondary-500/20 font-semibold py-2 sm:py-2.5 px-4 sm:px-6 rounded-full text-sm sm:text-base transition-all duration-300 w-full sm:w-auto min-h-[36px] flex items-center justify-center"
+              className="w-full max-w-[280px] sm:max-w-[300px] bg-transparent border-2 border-white text-white hover:bg-gradient-to-r hover:from-white/10 hover:to-secondary-500/20 font-semibold py-2.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 flex items-center justify-center"
             >
               Learn How It Works
             </a>
