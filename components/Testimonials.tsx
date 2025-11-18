@@ -138,6 +138,7 @@ export default function Testimonials() {
               <div className="relative" style={{ contain: 'layout' }}>
                 {testimonials.map((testimonial, index) => (
                   <Transition
+                    as="div"
                     key={index}
                     show={active === index}
                     enter="transition ease-in-out duration-500 delay-200"
