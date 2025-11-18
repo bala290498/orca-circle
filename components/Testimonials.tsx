@@ -65,6 +65,7 @@ export default function Testimonials() {
   ];
 
   const testimonialsRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState<number>(0);
   const [autorotate, setAutorotate] = useState<boolean>(true);
   const autorotateTiming: number = 7000;
@@ -75,15 +76,31 @@ export default function Testimonials() {
       setActive((prev) => (prev + 1 === testimonials.length ? 0 : prev + 1));
     }, autorotateTiming);
     return () => clearInterval(interval);
-  }, [active, autorotate, testimonials.length]);
+  }, [autorotate, testimonials.length]);
 
   const heightFix = () => {
-    if (testimonialsRef.current && testimonialsRef.current.parentElement)
-      testimonialsRef.current.parentElement.style.height = `${testimonialsRef.current.clientHeight}px`;
+    if (testimonialsRef.current && containerRef.current) {
+      const height = testimonialsRef.current.clientHeight;
+      containerRef.current.style.height = `${height}px`;
+    }
   };
 
   useEffect(() => {
+    // Set initial height
     heightFix();
+    
+    // Use ResizeObserver for better performance
+    const resizeObserver = new ResizeObserver(() => {
+      heightFix();
+    });
+    
+    if (testimonialsRef.current) {
+      resizeObserver.observe(testimonialsRef.current);
+    }
+    
+    return () => {
+      resizeObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -123,7 +140,11 @@ export default function Testimonials() {
                 </div>
               </div>
             </div>
-            <div className="mb-6 sm:mb-9 transition-all delay-300 duration-150 ease-in-out px-2">
+            <div 
+              ref={containerRef}
+              className="mb-6 sm:mb-9 transition-all delay-300 duration-150 ease-in-out px-2 overflow-hidden"
+              style={{ willChange: 'height' }}
+            >
               <div className="relative flex flex-col" ref={testimonialsRef}>
                 {testimonials.map((testimonial, index) => (
                   <Transition
@@ -135,9 +156,13 @@ export default function Testimonials() {
                     leave="transition ease-out duration-300 delay-300 absolute"
                     leaveFrom="opacity-100 translate-x-0"
                     leaveTo="opacity-0 translate-x-4"
-                    beforeEnter={() => heightFix()}
+                    beforeEnter={() => {
+                      requestAnimationFrame(() => {
+                        heightFix();
+                      });
+                    }}
                   >
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary-900 before:content-['\201C'] after:content-['\201D'] px-2">
+                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary-900 before:content-['\201C'] after:content-['\201D'] px-2" style={{ willChange: 'transform, opacity' }}>
                       {testimonial.quote}
                     </div>
                   </Transition>
