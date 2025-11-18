@@ -13,6 +13,7 @@ import CommunityStructure from '@/components/CommunityStructure'
 import Testimonials from '@/components/Testimonials'
 import FAQ from '@/components/FAQ'
 import FinalCTA from '@/components/FinalCTA'
+import Footer from '@/components/Footer'
 import JoinFormModal from '@/components/JoinFormModal'
 import GreetingModal from '@/components/GreetingModal'
 import { useModal } from '@/contexts/ModalContext'
@@ -75,6 +76,9 @@ export default function Home() {
 
       {/* 12. Final Call to Action */}
       <FinalCTA />
+
+      {/* 13. Footer */}
+      <Footer />
 
       {/* Global Join Form Modal */}
       <JoinFormModal isOpen={isModalOpen} onClose={closeModal} />
