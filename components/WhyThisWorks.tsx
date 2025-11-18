@@ -45,26 +45,44 @@ export default function WhyThisWorks() {
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-primary-50 via-secondary-50/30 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2">
-            Why This Works
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {points.map((point, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="flex items-start space-x-3">
-                  <div className="flex-shrink-0 mt-1">
-                    {point.icon}
+        <div className="max-w-7xl mx-auto">
+          {/* Two-column layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            {/* Left Column: Heading */}
+            <div className="flex flex-col lg:sticky lg:top-24">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+                Why This Works
+              </h2>
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">
+                A Proven Approach That Delivers Real Results
+              </h3>
+            </div>
+
+            {/* Right Column: Content */}
+            <div>
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6 sm:mb-8">
+                By leveraging the power of collective engagement, we create sustainable growth that benefits everyone involved.
+              </p>
+
+              {/* Points Tiles */}
+              <div className="space-y-4 sm:space-y-6">
+                {points.map((point, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-shrink-0 mt-1">
+                        {point.icon}
+                      </div>
+                      <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
+                        {point.text}
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
-                    {point.text}
-                  </p>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>

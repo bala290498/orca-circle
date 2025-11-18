@@ -1,24 +1,19 @@
-import { ShineBorder } from "@/registry/magicui/shine-border";
-
 export default function BusinessPillars() {
   const pillars = [
     {
       number: 1,
       title: 'Community-Owned Businesses',
       description: 'Run entirely by active community members. Profits are reinvested into member rewards.',
-      color: ["#0284c7", "#0ea5e9", "#38bdf8"],
     },
     {
       number: 2,
       title: 'In-House Initiatives',
       description: 'Member-owned businesses get promotional support, exclusive discounts, and increased client reach.',
-      color: ["#0369a1", "#0284c7", "#0ea5e9"],
     },
     {
       number: 3,
       title: 'Trusted Partner Program',
       description: 'External brands can promote instantly to our active community in return for fees that become member rewards.',
-      color: ["#075985", "#0369a1", "#0284c7"],
     },
   ]
 
@@ -31,26 +26,20 @@ export default function BusinessPillars() {
           </h2>
           <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 items-stretch">
             {pillars.map((pillar, index) => (
-              <ShineBorder
+              <div
                 key={index}
-                borderRadius={12}
-                borderWidth={2}
-                duration={14}
-                color={pillar.color}
-                className="w-full min-w-0 h-full"
+                className="w-full min-w-0 h-full bg-white rounded-lg p-4 sm:p-6 md:p-8 flex-1 flex flex-col shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="p-4 sm:p-6 md:p-8 flex-1 flex flex-col h-full">
-                  <div className="text-3xl sm:text-4xl font-bold text-primary-600 mb-3 sm:mb-4">
-                    {pillar.number}
-                  </div>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed flex-1">
-                    {pillar.description}
-                  </p>
+                <div className="text-3xl sm:text-4xl font-bold text-primary-600 mb-3 sm:mb-4">
+                  {pillar.number}
                 </div>
-              </ShineBorder>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+                  {pillar.title}
+                </h3>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed flex-1">
+                  {pillar.description}
+                </p>
+              </div>
             ))}
           </div>
         </div>
