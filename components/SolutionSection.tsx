@@ -28,9 +28,9 @@ export default function SolutionSection() {
 
               {/* Solution Tiles */}
               <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 mt-1">
+                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center">
+                  <div className="flex items-center space-x-3 w-full">
+                    <div className="flex-shrink-0 flex items-center">
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6 text-green-500"
                         fill="none"
@@ -51,9 +51,9 @@ export default function SolutionSection() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 mt-1">
+                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center">
+                  <div className="flex items-center space-x-3 w-full">
+                    <div className="flex-shrink-0 flex items-center">
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6 text-green-500"
                         fill="none"
@@ -74,9 +74,9 @@ export default function SolutionSection() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 mt-1">
+                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center">
+                  <div className="flex items-center space-x-3 w-full">
+                    <div className="flex-shrink-0 flex items-center">
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6 text-green-500"
                         fill="none"
@@ -97,9 +97,9 @@ export default function SolutionSection() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 mt-1">
+                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center">
+                  <div className="flex items-center space-x-3 w-full">
+                    <div className="flex-shrink-0 flex items-center">
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6 text-green-500"
                         fill="none"
@@ -120,9 +120,9 @@ export default function SolutionSection() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 mt-1">
+                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center">
+                  <div className="flex items-center space-x-3 w-full">
+                    <div className="flex-shrink-0 flex items-center">
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6 text-green-500"
                         fill="none"

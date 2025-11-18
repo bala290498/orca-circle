@@ -69,10 +69,10 @@ export default function WhyThisWorks() {
                 {points.map((point, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300"
+                    className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center"
                   >
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 mt-1">
+                    <div className="flex items-center space-x-3 w-full">
+                      <div className="flex-shrink-0 flex items-center">
                         {point.icon}
                       </div>
                       <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">

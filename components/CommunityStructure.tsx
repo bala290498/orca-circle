@@ -64,7 +64,7 @@ export default function CommunityStructure() {
                 </div>
                 
                 {/* Plus Icon - Separate line */}
-                <span className="text-gray-700 font-semibold text-lg sm:text-xl md:text-2xl">+</span>
+                <span className="text-gray-400 font-semibold text-lg sm:text-xl md:text-2xl">+</span>
                 
                 {/* Member Circles - Separate line */}
                 <div className="flex items-center justify-center gap-2 sm:gap-3 flex-wrap">

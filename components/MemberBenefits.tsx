@@ -89,10 +89,10 @@ export default function MemberBenefits() {
                 {benefits.map((benefit, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300"
+                    className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center"
                   >
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 mt-1">
+                    <div className="flex items-center space-x-3 w-full">
+                      <div className="flex-shrink-0 flex items-center">
                         {benefit.icon}
                       </div>
                       <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
@@ -106,7 +106,7 @@ export default function MemberBenefits() {
               <div className="text-center lg:text-left flex justify-center lg:justify-start">
                 <button
                   onClick={openModal}
-                  className="w-full max-w-[280px] sm:max-w-[300px] bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-2.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="w-full max-w-[280px] sm:max-w-[300px] bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Start Receiving Benefits
                 </button>

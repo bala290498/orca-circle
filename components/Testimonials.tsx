@@ -206,7 +206,7 @@ export default function Testimonials() {
               {testimonials.map((testimonial, index) => (
                 <button
                   key={index}
-                  className={`m-1.5 inline-flex justify-center whitespace-nowrap rounded-full px-2 sm:px-3 py-1.5 text-xs shadow-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring focus-visible:ring-primary-300 min-h-[32px] ${
+                  className={`m-1.5 inline-flex items-center justify-center whitespace-nowrap rounded-full px-2 sm:px-3 py-1.5 text-xs shadow-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring focus-visible:ring-primary-300 min-h-[32px] text-center ${
                     active === index
                       ? "bg-primary-500 text-white shadow-primary-950/10"
                       : "bg-white text-primary-900 hover:bg-primary-100"
@@ -216,7 +216,7 @@ export default function Testimonials() {
                     setAutorotate(false);
                   }}
                 >
-                  <span>{testimonial.name}</span>{" "}
+                  <span className="text-center">{testimonial.name}</span>{" "}
                   <span
                     className={`${
                       active === index ? "text-primary-200" : "text-primary-300"
@@ -224,7 +224,7 @@ export default function Testimonials() {
                   >
                     -
                   </span>{" "}
-                  <span>{testimonial.role}</span>
+                  <span className="text-center">{testimonial.role}</span>
                 </button>
               ))}
             </div>

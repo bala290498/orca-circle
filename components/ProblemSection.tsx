@@ -34,10 +34,10 @@ export default function ProblemSection() {
                 {problems.map((problem, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300"
+                    className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center"
                   >
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 mt-1">
+                    <div className="flex items-center space-x-3 w-full">
+                      <div className="flex-shrink-0 flex items-center">
                         <svg
                           className="w-5 h-5 sm:w-6 sm:h-6 text-red-500"
                           fill="none"
