@@ -46,9 +46,9 @@ export default function HowItWorks() {
                     key={index}
                     className="relative flex items-center min-h-[120px] md:min-h-[140px]"
                   >
-                    {/* Left card (even steps: 1, 3) */}
+                    {/* Left card (even steps: 1, 3) - Desktop only */}
                     {isEven && (
-                      <div className="w-full md:w-[calc(50%-2.5rem)] md:pr-4 relative">
+                      <div className="hidden md:block w-full md:w-[calc(50%-2.5rem)] md:pr-4 relative">
                         <div className="bg-white rounded-lg p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-200 border-r-4 border-primary-500 h-full flex flex-col">
                           <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2">
                             {step.title}
@@ -69,22 +69,15 @@ export default function HowItWorks() {
                       )}
                     </div>
                     
-                    {/* Right card (odd steps: 2, 4) */}
-                    {!isEven && (
-                      <div className="w-full md:w-[calc(50%-2.5rem)] md:ml-auto md:pl-4 relative">
-                        <div className="bg-white rounded-lg p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-200 border-l-4 border-primary-500 h-full flex flex-col">
-                          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2">
-                            {step.title}
-                          </h3>
-                          <p className="text-sm sm:text-base text-gray-700 flex-grow">{step.description}</p>
-                        </div>
+                    {/* Right card - Mobile: all cards on right, Desktop: odd steps (2, 4) */}
+                    <div className={`w-full md:w-[calc(50%-2.5rem)] md:ml-auto md:pl-4 relative ml-12 md:ml-auto ${isEven ? 'md:hidden' : ''}`}>
+                      <div className="bg-white rounded-lg p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-200 h-full flex flex-col border-l-4 border-primary-500">
+                        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                          {step.title}
+                        </h3>
+                        <p className="text-sm sm:text-base text-gray-700 flex-grow">{step.description}</p>
                       </div>
-                    )}
-                    
-                    {/* Spacer for mobile when card is on left */}
-                    {isEven && (
-                      <div className="md:hidden ml-3"></div>
-                    )}
+                    </div>
                   </div>
                 );
               })}
