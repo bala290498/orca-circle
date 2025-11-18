@@ -62,13 +62,13 @@ export function AnimatedButton({
         className="absolute inset-0"
         style={{
           borderRadius: borderRadius,
-          background,
+          background: background as any,
           mask: `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
           maskComposite: "exclude",
           WebkitMask: `linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)`,
           WebkitMaskComposite: "xor",
           padding: "2px",
-        } as React.CSSProperties}
+        }}
       />
 
       <div
