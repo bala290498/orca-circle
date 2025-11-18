@@ -59,7 +59,7 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-300 hover:text-gray-400 transition-colors z-10"
+          className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors z-10"
           aria-label="Close modal"
         >
           <svg
@@ -71,7 +71,7 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={1.5}
+              strokeWidth={2}
               d="M6 18L18 6M6 6l12 12"
             />
           </svg>
@@ -79,19 +79,19 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
 
         {/* Greeting Content */}
         <div className="p-5 sm:p-6 text-center">
-          <div className="mb-3">
-            <div className="text-2xl sm:text-3xl mb-2">✨</div>
-            <h2 className="text-lg sm:text-xl font-medium text-gray-700 mb-1">
+          <div className="mb-4 space-y-2">
+            <div className="text-3xl sm:text-4xl mb-2">🎉</div>
+            <h2 className="text-lg sm:text-xl font-medium text-gray-700">
               Welcome to Orca Circle
             </h2>
             {userName && (
-              <p className="text-base sm:text-lg font-normal text-gray-500">
+              <p className="text-base sm:text-lg font-medium text-gray-900">
                 {userName}
               </p>
             )}
           </div>
 
-          <div className="bg-green-50/50 border border-green-100 rounded-lg p-3 mb-3 text-left">
+          <div className="bg-green-50/50 border border-green-100 rounded-lg p-3 mb-4 text-left">
             <p className="text-xs sm:text-sm text-green-700">
               Registration successful, Open WhatsApp to join.
             </p>
