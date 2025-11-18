@@ -30,33 +30,12 @@ export default function HowItWorks() {
             How the Community Works
           </h2>
           
-          {/* Timeline - Strict three-column layout */}
-          <div className="relative max-w-6xl mx-auto">
-            {/* Steps - Three-column grid: Left card | Timeline | Right card */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-              {/* Left Column - Cards for even steps (1, 3) */}
-              <div className="hidden md:block md:col-span-1">
-                <div className="space-y-8">
-                  {steps.map((step, index) => {
-                    const isEven = index % 2 === 0;
-                    if (!isEven) return <div key={index} className="h-[140px]"></div>;
-                    return (
-                      <div key={index} className="flex items-center h-[140px]">
-                        <div className="w-full bg-white rounded-lg p-5 md:p-6 transition-all duration-200 flex flex-col border-r-4 border-primary-500 min-h-[140px]">
-                          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2">
-                            {step.title}
-                          </h3>
-                          <p className="text-sm sm:text-base text-gray-700">{step.description}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Center Column - Timeline */}
-              <div className="hidden md:block md:col-span-1 relative">
-                {/* Vertical timeline line - centered */}
+          {/* Timeline - Two-column layout: Timeline left, Cards right, both centered */}
+          <div className="relative flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-[100px_auto] gap-6 md:gap-6">
+              {/* Left Column - Timeline (Fixed Width) */}
+              <div className="hidden md:block relative w-[100px] flex justify-center">
+                {/* Vertical timeline line */}
                 <div className="absolute left-1/2 top-0 bottom-0 w-0.5 md:w-1 bg-gradient-to-b from-primary-400 via-primary-500 to-secondary-500 -translate-x-1/2"></div>
                 
                 {/* Timeline nodes */}
@@ -65,7 +44,8 @@ export default function HowItWorks() {
                     return (
                       <div key={index} className="flex items-center justify-center h-[140px]">
                         <div className="relative z-10">
-                          <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center text-base sm:text-lg md:text-xl font-semibold border-2 border-primary-500 text-primary-600">
+                          {/* Step circle */}
+                          <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-lg font-semibold border-2 border-primary-500 text-primary-600 shadow-sm">
                             {step.number}
                           </div>
                         </div>
@@ -75,15 +55,13 @@ export default function HowItWorks() {
                 </div>
               </div>
 
-              {/* Right Column - Cards for odd steps (2, 4) */}
-              <div className="hidden md:block md:col-span-1">
+              {/* Right Column - All Cards */}
+              <div className="hidden md:block">
                 <div className="space-y-8">
                   {steps.map((step, index) => {
-                    const isOdd = index % 2 === 1;
-                    if (!isOdd) return <div key={index} className="h-[140px]"></div>;
                     return (
-                      <div key={index} className="flex items-center h-[140px]">
-                        <div className="w-full bg-white rounded-lg p-5 md:p-6 transition-all duration-200 flex flex-col border-l-4 border-primary-500 min-h-[140px]">
+                      <div key={index} className="flex items-center justify-center h-[140px]">
+                        <div className="w-full max-w-md bg-white rounded-lg p-5 md:p-6 transition-all duration-200 flex flex-col border-l-4 border-primary-500 h-[140px] shadow-sm">
                           <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2">
                             {step.title}
                           </h3>

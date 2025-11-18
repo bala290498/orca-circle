@@ -11,7 +11,7 @@ export default function Membership() {
       text: "100% Free Forever",
       icon: (
         <svg
-          className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600 flex-shrink-0"
+          className="w-6 h-6 text-primary-600"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -29,7 +29,7 @@ export default function Membership() {
       text: "No Hidden Costs",
       icon: (
         <svg
-          className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600 flex-shrink-0"
+          className="w-6 h-6 text-primary-600"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ export default function Membership() {
       text: "No Subscription",
       icon: (
         <svg
-          className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600 flex-shrink-0"
+          className="w-6 h-6 text-primary-600"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -67,26 +67,33 @@ export default function Membership() {
     <section id="membership" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-secondary-50/20 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
-            Free Membership. No payments.
+          <h2 className="mb-4 sm:mb-6 px-2">
+            <GradientText
+              colors={["rgb(255, 64, 129)", "rgb(255, 152, 0)", "rgb(76, 175, 80)", "rgb(33, 150, 243)", "rgb(156, 39, 176)", "rgb(255, 64, 129)"]}
+              animationSpeed={3}
+              showBorder={false}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
+            >
+              Free Membership. No payments.
+            </GradientText>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10 px-2">
             Stay active and Grow with your community.
           </p>
           
-          {/* Features - Text with Icons */}
+          {/* Features - Flat Cards in Horizontal Line */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-10 px-2">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-center gap-2">
-                {feature.icon}
-                <GradientText
-                  colors={["rgb(255, 64, 129)", "rgb(255, 152, 0)", "rgb(76, 175, 80)", "rgb(33, 150, 243)", "rgb(156, 39, 176)", "rgb(255, 64, 129)"]}
-                  animationSpeed={3}
-                  showBorder={false}
-                  className="text-sm sm:text-base font-medium"
-                >
+              <div
+                key={index}
+                className="bg-white p-4 sm:p-6 border border-gray-200 hover:border-primary-300 transition-all duration-300 flex items-center gap-3 w-full sm:w-auto"
+              >
+                <div className="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0">
+                  {feature.icon}
+                </div>
+                <span className="text-sm sm:text-base text-gray-700 font-medium">
                   {feature.text}
-                </GradientText>
+                </span>
               </div>
             ))}
           </div>

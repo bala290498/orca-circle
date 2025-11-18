@@ -81,6 +81,10 @@ export default function MemberBenefits() {
 
             {/* Right Column: Content */}
             <div>
+              <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6 sm:mb-8">
+                Members enjoy multiple high-value benefits, including exclusive rewards, special discounts, business and personal growth opportunities, strong community support, and constant networking with like-minded people — all designed to help you grow faster together.
+              </p>
+              
               <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
                 {benefits.map((benefit, index) => (
                   <div
