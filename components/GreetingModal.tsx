@@ -59,11 +59,11 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10"
+          className="absolute top-3 right-3 text-gray-300 hover:text-gray-400 transition-colors z-10"
           aria-label="Close modal"
         >
           <svg
-            className="w-6 h-6"
+            className="w-4 h-4"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -71,55 +71,40 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={2}
+              strokeWidth={1.5}
               d="M6 18L18 6M6 6l12 12"
             />
           </svg>
         </button>
 
         {/* Greeting Content */}
-        <div className="p-4 sm:p-6 md:p-8 text-center">
-          <div className="mb-4 sm:mb-6">
-            <div className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4">🎉</div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-              Welcome to
+        <div className="p-5 sm:p-6 text-center">
+          <div className="mb-3">
+            <div className="text-2xl sm:text-3xl mb-2">✨</div>
+            <h2 className="text-lg sm:text-xl font-medium text-gray-700 mb-1">
+              Welcome to Orca Circle
             </h2>
-            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 px-2">
-              Orca Circle{userName ? `, ${userName}` : ''}!
-            </p>
+            {userName && (
+              <p className="text-base sm:text-lg font-normal text-gray-500">
+                {userName}
+              </p>
+            )}
           </div>
 
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4 sm:p-6 mb-4 sm:mb-6 text-left">
-            <div className="flex items-start">
-              <svg
-                className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 mr-2 sm:mr-3 flex-shrink-0 mt-0.5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <div>
-                <p className="text-sm sm:text-base text-green-800 font-medium">
-                  Registration successful, Open WhatsApp to join.
-                </p>
-              </div>
-            </div>
+          <div className="bg-green-50/50 border border-green-100 rounded-lg p-3 mb-3 text-left">
+            <p className="text-xs sm:text-sm text-green-700">
+              Registration successful, Open WhatsApp to join.
+            </p>
           </div>
 
           {/* WhatsApp Button - Shows if WhatsApp didn't open automatically */}
           {showWhatsAppButton && (
             <button
               onClick={openWhatsApp}
-              className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 min-h-[44px] text-base sm:text-lg"
+              className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2.5 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2 text-sm sm:text-base"
             >
               <svg
-                className="w-5 h-5"
+                className="w-4 h-4"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
