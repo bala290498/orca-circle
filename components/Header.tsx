@@ -146,28 +146,31 @@ export default function Header() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden border-t border-gray-200 bg-white">
-            <div className="px-4 pt-2 pb-4 space-y-1">
+            <div className="px-4 pt-2 pb-4">
               <button
                 onClick={() => scrollToSection("how-it-works")}
-                className="block w-full text-center px-3 py-2 text-base text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors font-medium"
+                className="block w-full text-center px-3 py-2 text-base text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors font-medium"
               >
                 How it works
               </button>
+              <div className="mx-12 border-b border-gray-100"></div>
               <button
                 onClick={() => scrollToSection("benefits")}
-                className="block w-full text-center px-3 py-2 text-base text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors font-medium"
+                className="block w-full text-center px-3 py-2 text-base text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors font-medium"
               >
                 Benefits
               </button>
+              <div className="mx-12 border-b border-gray-100"></div>
               <button
                 onClick={() => scrollToSection("testimonials")}
-                className="block w-full text-center px-3 py-2 text-base text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors font-medium"
+                className="block w-full text-center px-3 py-2 text-base text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors font-medium"
               >
                 Testimonials
               </button>
+              <div className="mx-12 border-b border-gray-100"></div>
               <button
                 onClick={() => scrollToSection("faq")}
-                className="block w-full text-center px-3 py-2 text-base text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors font-medium"
+                className="block w-full text-center px-3 py-2 text-base text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors font-medium"
               >
                 FAQ
               </button>
