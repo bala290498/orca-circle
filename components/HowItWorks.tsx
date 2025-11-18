@@ -25,50 +25,65 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-primary-50/30 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2">
             How the Community Works
           </h2>
           
-          {/* Timeline */}
-          <div className="relative">
-            {/* Vertical line - centered on desktop */}
-            <div className="absolute left-8 sm:left-1/2 sm:-translate-x-1/2 top-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-primary-400 via-primary-500 to-secondary-500"></div>
+          {/* Timeline - Clean zig-zag layout */}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Vertical timeline line - thinner and centered */}
+            <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-0.5 md:w-1 bg-gradient-to-b from-primary-400 via-primary-500 to-secondary-500"></div>
             
-            {/* Steps */}
-            <div className="space-y-8 sm:space-y-12">
+            {/* Steps - Fixed vertical rhythm */}
+            <div className="space-y-10 md:space-y-12">
               {steps.map((step, index) => {
                 const isEven = index % 2 === 0;
+                const isLast = index === steps.length - 1;
+                
                 return (
                   <div
                     key={index}
-                    className="relative flex items-start sm:items-center w-full"
+                    className="relative flex items-center min-h-[120px] md:min-h-[140px]"
                   >
-                    {/* Left side card (even steps) */}
+                    {/* Left card (even steps: 1, 3) */}
                     {isEven && (
-                      <div className="ml-12 sm:ml-0 sm:w-[calc(50%-3rem)] sm:mr-auto sm:pr-8 bg-white rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200">
-                        <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
-                          {step.title}
-                        </h3>
-                        <p className="text-sm sm:text-base text-gray-700">{step.description}</p>
+                      <div className="w-full md:w-[calc(50%-2.5rem)] md:pr-4 relative">
+                        <div className="bg-white rounded-lg p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-200 border-r-4 border-primary-500 h-full flex flex-col">
+                          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                            {step.title}
+                          </h3>
+                          <p className="text-sm sm:text-base text-gray-700 flex-grow">{step.description}</p>
+                        </div>
                       </div>
                     )}
                     
-                    {/* Timeline node - centered on the line */}
-                    <div className="absolute left-0 sm:left-1/2 sm:-translate-x-1/2 z-10 flex-shrink-0">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full flex items-center justify-center text-xl sm:text-2xl md:text-3xl font-bold shadow-md border-4 border-primary-600 text-primary-600">
+                    {/* Timeline node - smaller with thinner border */}
+                    <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10 flex-shrink-0 -ml-6 md:ml-0">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center text-base sm:text-lg md:text-xl font-semibold shadow-sm border-2 border-primary-500 text-primary-600">
                         {step.number}
                       </div>
+                      {/* Mobile connecting line */}
+                      {!isLast && (
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 w-0.5 h-5 md:hidden bg-gradient-to-b from-primary-400 to-primary-500"></div>
+                      )}
                     </div>
                     
-                    {/* Right side card (odd steps) */}
+                    {/* Right card (odd steps: 2, 4) */}
                     {!isEven && (
-                      <div className="ml-12 sm:ml-auto sm:w-[calc(50%-3rem)] sm:pl-8 bg-white rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200">
-                        <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
-                          {step.title}
-                        </h3>
-                        <p className="text-sm sm:text-base text-gray-700">{step.description}</p>
+                      <div className="w-full md:w-[calc(50%-2.5rem)] md:ml-auto md:pl-4 relative">
+                        <div className="bg-white rounded-lg p-5 md:p-6 shadow-sm hover:shadow-md transition-all duration-200 border-l-4 border-primary-500 h-full flex flex-col">
+                          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                            {step.title}
+                          </h3>
+                          <p className="text-sm sm:text-base text-gray-700 flex-grow">{step.description}</p>
+                        </div>
                       </div>
+                    )}
+                    
+                    {/* Spacer for mobile when card is on left */}
+                    {isEven && (
+                      <div className="md:hidden ml-3"></div>
                     )}
                   </div>
                 );
