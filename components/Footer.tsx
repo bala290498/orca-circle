@@ -7,7 +7,9 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 sm:mb-12">
             {/* About Column */}
-            <div className="text-center pb-6 md:pb-0 border-b md:border-b-0 md:border-r border-gray-800 md:pr-8 lg:pr-12">
+            <div className="text-center pb-6 md:pb-0 md:pr-8 lg:pr-12 relative">
+              <div className="hidden md:block absolute right-0 top-4 bottom-4 w-px bg-gray-600"></div>
+              <div className="md:hidden mx-12 border-b border-gray-600 mb-6"></div>
               <h3 className="text-white font-semibold text-sm sm:text-base mb-4">About</h3>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -29,7 +31,9 @@ export default function Footer() {
             </div>
 
             {/* Community Column */}
-            <div className="text-center pb-6 md:pb-0 border-b md:border-b-0 md:border-r border-gray-800 md:pr-8 lg:pr-12">
+            <div className="text-center pb-6 md:pb-0 md:pr-8 lg:pr-12 relative">
+              <div className="hidden md:block absolute right-0 top-4 bottom-4 w-px bg-gray-600"></div>
+              <div className="md:hidden mx-12 border-b border-gray-600 mb-6"></div>
               <h3 className="text-white font-semibold text-sm sm:text-base mb-4">Community</h3>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -51,7 +55,9 @@ export default function Footer() {
             </div>
 
             {/* Resources Column */}
-            <div className="text-center pb-6 md:pb-0 border-b md:border-b-0 md:border-r border-gray-800 md:pr-8 lg:pr-12">
+            <div className="text-center pb-6 md:pb-0 md:pr-8 lg:pr-12 relative">
+              <div className="hidden md:block absolute right-0 top-4 bottom-4 w-px bg-gray-600"></div>
+              <div className="md:hidden mx-12 border-b border-gray-600 mb-6"></div>
               <h3 className="text-white font-semibold text-sm sm:text-base mb-4">Resources</h3>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -74,6 +80,7 @@ export default function Footer() {
 
             {/* Legal Column */}
             <div className="text-center">
+              <div className="md:hidden mx-12 border-b border-gray-600 mb-6"></div>
               <h3 className="text-white font-semibold text-sm sm:text-base mb-4">Legal</h3>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -97,7 +104,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom Section */}
-          <div className="border-t border-gray-800 pt-8">
+          <div className="border-t border-gray-600 pt-8">
             <div className="flex justify-center">
               {/* Copyright */}
               <p className="text-xs sm:text-sm text-gray-400 text-center">
