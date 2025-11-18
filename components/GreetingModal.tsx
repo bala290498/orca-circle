@@ -81,18 +81,18 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
         <div className="p-5 sm:p-6 text-center">
           <div className="mb-4 space-y-2">
             <div className="text-3xl sm:text-4xl mb-2">🎉</div>
-            <h2 className="text-lg sm:text-xl font-medium text-gray-700">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-900">
               Welcome to Orca Circle
             </h2>
             {userName && (
-              <p className="text-base sm:text-lg font-medium text-gray-900">
+              <p className="text-lg sm:text-xl md:text-2xl font-medium text-primary-600">
                 {userName}
               </p>
             )}
           </div>
 
           <div className="bg-green-50/50 border border-green-100 rounded-lg p-3 mb-4 text-left">
-            <p className="text-xs sm:text-sm text-green-700">
+            <p className="text-sm sm:text-base text-green-700">
               Registration successful, Open WhatsApp to join.
             </p>
           </div>
