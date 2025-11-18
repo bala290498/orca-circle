@@ -69,7 +69,7 @@ export default function Header() {
           <div className="flex items-center">
             <a
               href="/"
-              className="text-xl sm:text-2xl font-bold text-gray-900 hover:text-primary-600 transition-colors"
+              className="text-lg sm:text-xl font-bold text-gray-900 hover:text-primary-600 transition-colors"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
@@ -80,28 +80,28 @@ export default function Header() {
           </div>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
             <button
               onClick={() => scrollToSection("how-it-works")}
-              className="text-sm lg:text-base text-gray-700 hover:text-primary-600 transition-colors font-medium"
+              className="text-xs lg:text-sm text-gray-700 hover:text-primary-600 transition-colors font-medium"
             >
               How it works
             </button>
             <button
               onClick={() => scrollToSection("benefits")}
-              className="text-sm lg:text-base text-gray-700 hover:text-primary-600 transition-colors font-medium"
+              className="text-xs lg:text-sm text-gray-700 hover:text-primary-600 transition-colors font-medium"
             >
               Benefits
             </button>
             <button
               onClick={() => scrollToSection("testimonials")}
-              className="text-sm lg:text-base text-gray-700 hover:text-primary-600 transition-colors font-medium"
+              className="text-xs lg:text-sm text-gray-700 hover:text-primary-600 transition-colors font-medium"
             >
               Testimonials
             </button>
             <button
               onClick={() => scrollToSection("faq")}
-              className="text-sm lg:text-base text-gray-700 hover:text-primary-600 transition-colors font-medium"
+              className="text-xs lg:text-sm text-gray-700 hover:text-primary-600 transition-colors font-medium"
             >
               FAQ
             </button>
@@ -111,7 +111,7 @@ export default function Header() {
           <div className="flex items-center">
             <button
               onClick={openModal}
-              className="bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2 px-4 sm:py-2.5 sm:px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap"
+              className="bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-1 px-2.5 sm:py-1.5 sm:px-3 rounded-full text-xs transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl whitespace-nowrap"
             >
               Join the Community (Free Forever)
             </button>

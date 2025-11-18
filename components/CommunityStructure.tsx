@@ -3,7 +3,7 @@ export default function CommunityStructure() {
     <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2">
             Grow With Your Group
           </h2>
           <div className="bg-white rounded-lg p-4 sm:p-6 md:p-8 shadow-lg">
@@ -13,7 +13,7 @@ export default function CommunityStructure() {
                   1
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-2">
                     Each group: 1 group head + 10 members
                   </h3>
                 </div>
@@ -24,7 +24,7 @@ export default function CommunityStructure() {
                   2
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-2">
                     Group heads communicate and coordinate engagement activities
                   </h3>
                 </div>
@@ -35,7 +35,7 @@ export default function CommunityStructure() {
                   3
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-2">
                     Bring your own group to automatically become a group head
                   </h3>
                 </div>
@@ -46,7 +46,7 @@ export default function CommunityStructure() {
                   4
                 </div>
                 <div>
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-2">
                     Extra non-financial benefits for group heads
                   </h3>
                 </div>

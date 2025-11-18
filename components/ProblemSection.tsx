@@ -15,10 +15,10 @@ export default function ProblemSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left Column: Heading */}
             <div className="flex flex-col lg:sticky lg:top-24">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Problems
               </h2>
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">
+              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900">
                 Businesses Are Struggling to Get Reach and Real Engagement
               </h3>
             </div>

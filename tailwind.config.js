@@ -42,6 +42,7 @@ module.exports = {
         'shine': 'shine var(--duration, 14s) ease-in-out infinite',
         'shine-pulse': 'shine-pulse var(--shine-pulse-duration, 14s) infinite linear',
         'gradient': 'gradient 8s linear infinite',
+        'border-rotate': 'border-rotate 3s linear infinite',
       },
       keyframes: {
         'star-movement-bottom': {
@@ -63,6 +64,11 @@ module.exports = {
           '100%': { backgroundPosition: '0% 0%' },
         },
         'gradient': {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        'border-rotate': {
           '0%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },

@@ -30,10 +30,10 @@ export default function HowItWorks() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left Column: Heading */}
             <div className="flex flex-col lg:sticky lg:top-24">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 How the Community Works
               </h2>
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">
+              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900">
                 A Simple Four-Step Process
               </h3>
             </div>
@@ -76,7 +76,7 @@ export default function HowItWorks() {
                         return (
                           <div key={index} className="flex items-center justify-center h-[140px]">
                             <div className="w-full max-w-md bg-white rounded-lg p-5 md:p-6 transition-all duration-200 flex flex-col border-l-4 border-primary-500 h-[140px] shadow-sm">
-                              <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-2">
+                              <h3 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-2">
                                 {step.title}
                               </h3>
                               <p className="text-sm sm:text-base text-gray-700">{step.description}</p>
@@ -105,7 +105,7 @@ export default function HowItWorks() {
                             
                             {/* Card */}
                             <div className="w-full bg-white rounded-lg p-5 transition-all duration-200 flex flex-col border-l-4 border-primary-500 min-h-[140px] ml-6">
-                              <h3 className="text-base font-semibold text-gray-900 mb-2">
+                              <h3 className="text-sm font-semibold text-gray-900 mb-2">
                                 {step.title}
                               </h3>
                               <p className="text-sm text-gray-700">{step.description}</p>

@@ -72,7 +72,7 @@ export default function Membership() {
               colors={["rgb(255, 64, 129)", "rgb(255, 152, 0)", "rgb(76, 175, 80)", "rgb(33, 150, 243)", "rgb(156, 39, 176)", "rgb(255, 64, 129)"]}
               animationSpeed={3}
               showBorder={false}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold"
             >
               Free Membership. No payments.
             </GradientText>
@@ -101,7 +101,7 @@ export default function Membership() {
           {/* Join Button */}
           <button
             onClick={openModal}
-            className="w-full sm:w-auto bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-h-[44px]"
+            className="w-full sm:w-auto bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2 sm:py-2.5 px-4 sm:px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-h-[36px]"
           >
             Join the Community Today
           </button>

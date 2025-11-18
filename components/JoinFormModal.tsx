@@ -133,7 +133,7 @@ export default function JoinFormModal({ isOpen, onClose }: JoinFormModalProps) {
 
         {/* Form Content */}
         <div className="p-4 sm:p-6 md:p-8">
-          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
+          <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-4 sm:mb-6">
             Join the Community Today
           </h3>
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">

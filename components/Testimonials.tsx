@@ -117,7 +117,7 @@ export default function Testimonials() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto" style={{ contain: 'layout' }}>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2">
             What Our Members Say
           </h2>
           <div className="mx-auto w-full max-w-3xl text-center px-2">
