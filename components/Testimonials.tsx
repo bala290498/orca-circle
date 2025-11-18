@@ -66,6 +66,7 @@ export default function Testimonials() {
 
   const testimonialsRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const heightsRef = useRef<number[]>([]);
   const [active, setActive] = useState<number>(0);
   const [autorotate, setAutorotate] = useState<boolean>(true);
   const autorotateTiming: number = 7000;
@@ -78,30 +79,57 @@ export default function Testimonials() {
     return () => clearInterval(interval);
   }, [autorotate, testimonials.length]);
 
-  const heightFix = () => {
-    if (testimonialsRef.current && containerRef.current) {
-      const height = testimonialsRef.current.clientHeight;
-      containerRef.current.style.height = `${height}px`;
-    }
-  };
-
+  // Pre-calculate heights for all testimonials to prevent layout shifts
   useEffect(() => {
-    // Set initial height
-    heightFix();
+    if (!testimonialsRef.current || !containerRef.current) return;
     
-    // Use ResizeObserver for better performance
-    const resizeObserver = new ResizeObserver(() => {
-      heightFix();
-    });
+    const calculateHeights = () => {
+      const heights: number[] = [];
+      const children = testimonialsRef.current?.children;
+      if (children) {
+        Array.from(children).forEach((child) => {
+          const element = child as HTMLElement;
+          // Temporarily show to measure
+          element.style.visibility = 'hidden';
+          element.style.position = 'absolute';
+          element.style.display = 'block';
+          heights.push(element.offsetHeight);
+          // Reset
+          element.style.visibility = '';
+          element.style.position = '';
+          element.style.display = '';
+        });
+      }
+      heightsRef.current = heights;
+      // Set initial height
+      if (heights.length > 0 && containerRef.current) {
+        containerRef.current.style.height = `${heights[0]}px`;
+      }
+    };
     
-    if (testimonialsRef.current) {
-      resizeObserver.observe(testimonialsRef.current);
-    }
+    // Wait for DOM to be ready
+    setTimeout(calculateHeights, 100);
     
+    // Recalculate on resize (throttled)
+    let resizeTimeout: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(calculateHeights, 150);
+    };
+    
+    window.addEventListener('resize', handleResize);
     return () => {
-      resizeObserver.disconnect();
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(resizeTimeout);
     };
   }, []);
+
+  // Update height when active changes
+  useEffect(() => {
+    if (containerRef.current && heightsRef.current[active] !== undefined) {
+      containerRef.current.style.height = `${heightsRef.current[active]}px`;
+    }
+  }, [active]);
 
   return (
     <section id="testimonials" className="py-12 sm:py-16 md:py-20 bg-white">
@@ -126,7 +154,6 @@ export default function Testimonials() {
                       leave="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700"
                       leaveFrom="opacity-100 rotate-0"
                       leaveTo="opacity-0 rotate-[60deg]"
-                      beforeEnter={() => heightFix()}
                     >
                       <Image
                         className="relative left-1/2 top-8 sm:top-11 -translate-x-1/2 rounded-full"
@@ -142,10 +169,14 @@ export default function Testimonials() {
             </div>
             <div 
               ref={containerRef}
-              className="mb-6 sm:mb-9 transition-all delay-300 duration-150 ease-in-out px-2 overflow-hidden"
-              style={{ willChange: 'height' }}
+              className="mb-6 sm:mb-9 px-2 overflow-hidden"
+              style={{ 
+                willChange: 'height',
+                transition: 'height 0.3s ease-in-out',
+                contain: 'layout style paint'
+              }}
             >
-              <div className="relative flex flex-col" ref={testimonialsRef}>
+              <div className="relative flex flex-col" ref={testimonialsRef} style={{ contain: 'layout' }}>
                 {testimonials.map((testimonial, index) => (
                   <Transition
                     key={index}
@@ -156,13 +187,14 @@ export default function Testimonials() {
                     leave="transition ease-out duration-300 delay-300 absolute"
                     leaveFrom="opacity-100 translate-x-0"
                     leaveTo="opacity-0 translate-x-4"
-                    beforeEnter={() => {
-                      requestAnimationFrame(() => {
-                        heightFix();
-                      });
-                    }}
                   >
-                    <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary-900 before:content-['\201C'] after:content-['\201D'] px-2" style={{ willChange: 'transform, opacity' }}>
+                    <div 
+                      className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary-900 before:content-['\201C'] after:content-['\201D'] px-2" 
+                      style={{ 
+                        willChange: 'transform, opacity',
+                        contain: 'layout style paint'
+                      }}
+                    >
                       {testimonial.quote}
                     </div>
                   </Transition>
