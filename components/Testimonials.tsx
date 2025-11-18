@@ -64,72 +64,31 @@ export default function Testimonials() {
     },
   ];
 
-  const testimonialsRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const heightsRef = useRef<number[]>([]);
   const [active, setActive] = useState<number>(0);
   const [autorotate, setAutorotate] = useState<boolean>(true);
   const autorotateTiming: number = 7000;
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    if (!autorotate) return;
-    const interval = setInterval(() => {
+    if (!autorotate) {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+      return;
+    }
+    
+    intervalRef.current = setInterval(() => {
       setActive((prev) => (prev + 1 === testimonials.length ? 0 : prev + 1));
     }, autorotateTiming);
-    return () => clearInterval(interval);
-  }, [autorotate, testimonials.length]);
-
-  // Pre-calculate heights for all testimonials to prevent layout shifts
-  useEffect(() => {
-    if (!testimonialsRef.current || !containerRef.current) return;
     
-    const calculateHeights = () => {
-      const heights: number[] = [];
-      const children = testimonialsRef.current?.children;
-      if (children) {
-        Array.from(children).forEach((child) => {
-          const element = child as HTMLElement;
-          // Temporarily show to measure
-          element.style.visibility = 'hidden';
-          element.style.position = 'absolute';
-          element.style.display = 'block';
-          heights.push(element.offsetHeight);
-          // Reset
-          element.style.visibility = '';
-          element.style.position = '';
-          element.style.display = '';
-        });
-      }
-      heightsRef.current = heights;
-      // Set initial height
-      if (heights.length > 0 && containerRef.current) {
-        containerRef.current.style.height = `${heights[0]}px`;
-      }
-    };
-    
-    // Wait for DOM to be ready
-    setTimeout(calculateHeights, 100);
-    
-    // Recalculate on resize (throttled)
-    let resizeTimeout: NodeJS.Timeout;
-    const handleResize = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(calculateHeights, 150);
-    };
-    
-    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
-      clearTimeout(resizeTimeout);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
     };
-  }, []);
-
-  // Update height when active changes
-  useEffect(() => {
-    if (containerRef.current && heightsRef.current[active] !== undefined) {
-      containerRef.current.style.height = `${heightsRef.current[active]}px`;
-    }
-  }, [active]);
+  }, [autorotate, testimonials.length, autorotateTiming]);
 
   return (
     <section id="testimonials" className="py-12 sm:py-16 md:py-20 bg-white">
@@ -168,31 +127,38 @@ export default function Testimonials() {
               </div>
             </div>
             <div 
-              ref={containerRef}
-              className="mb-6 sm:mb-9 px-2 overflow-hidden"
+              className="mb-6 sm:mb-9 px-2"
               style={{ 
-                willChange: 'height',
-                transition: 'height 0.3s ease-in-out',
-                contain: 'layout style paint'
+                minHeight: '120px',
+                position: 'relative',
+                contain: 'layout style paint',
+                isolation: 'isolate'
               }}
             >
-              <div className="relative flex flex-col" ref={testimonialsRef} style={{ contain: 'layout' }}>
+              <div className="relative" style={{ contain: 'layout' }}>
                 {testimonials.map((testimonial, index) => (
                   <Transition
                     key={index}
                     show={active === index}
-                    enter="transition ease-in-out duration-500 delay-200 order-first"
-                    enterFrom="opacity-0 -translate-x-4"
+                    enter="transition ease-in-out duration-500 delay-200"
+                    enterFrom="opacity-0 translate-x-4"
                     enterTo="opacity-100 translate-x-0"
-                    leave="transition ease-out duration-300 delay-300 absolute"
+                    leave="transition ease-out duration-300"
                     leaveFrom="opacity-100 translate-x-0"
-                    leaveTo="opacity-0 translate-x-4"
+                    leaveTo="opacity-0 -translate-x-4"
+                    className="absolute inset-0"
+                    style={{ 
+                      willChange: 'transform, opacity',
+                      backfaceVisibility: 'hidden',
+                      WebkitBackfaceVisibility: 'hidden',
+                      transform: 'translateZ(0)'
+                    }}
                   >
                     <div 
-                      className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary-900 before:content-['\201C'] after:content-['\201D'] px-2" 
+                      className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary-900 before:content-['\201C'] after:content-['\201D'] px-2"
                       style={{ 
                         willChange: 'transform, opacity',
-                        contain: 'layout style paint'
+                        transform: 'translateZ(0)'
                       }}
                     >
                       {testimonial.quote}
