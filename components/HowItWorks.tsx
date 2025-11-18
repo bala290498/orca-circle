@@ -88,32 +88,32 @@ export default function HowItWorks() {
                   </div>
 
                   {/* Mobile Layout - Single column */}
-                  <div className="md:hidden space-y-8">
-                    {steps.map((step, index) => {
-                      return (
-                        <div key={index} className="relative">
-                          {/* Timeline line for mobile */}
-                          <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-400 via-primary-500 to-secondary-500"></div>
-                          
-                          <div className="flex items-center ml-8">
-                            {/* Timeline node */}
-                            <div className="absolute left-0 z-10 -translate-x-1/2">
-                              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-base font-semibold border-2 border-primary-500 text-primary-600">
+                  <div className="md:hidden relative">
+                    {/* Continuous timeline line for mobile */}
+                    <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-400 via-primary-500 to-secondary-500"></div>
+                    
+                    <div className="space-y-8">
+                      {steps.map((step, index) => {
+                        return (
+                          <div key={index} className="relative flex items-center gap-4">
+                            {/* Timeline node - centered on the line */}
+                            <div className="relative z-10 flex-shrink-0">
+                              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-base font-semibold border-2 border-primary-500 text-primary-600 shadow-sm">
                                 {step.number}
                               </div>
                             </div>
                             
                             {/* Card */}
-                            <div className="w-full bg-white rounded-lg p-5 transition-all duration-200 flex flex-col border-l-4 border-primary-500 min-h-[140px] ml-6">
-                              <h3 className="text-sm font-semibold text-gray-900 mb-2">
+                            <div className="flex-1 bg-white rounded-lg px-4 py-2.5 transition-all duration-200 flex flex-col justify-center border-l-4 border-primary-500 h-[110px] shadow-sm">
+                              <h3 className="text-sm font-semibold text-gray-900 mb-1.5">
                                 {step.title}
                               </h3>
-                              <p className="text-sm text-gray-700">{step.description}</p>
+                              <p className="text-sm text-gray-700 leading-tight">{step.description}</p>
                             </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>
