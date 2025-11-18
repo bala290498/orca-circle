@@ -5,6 +5,7 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 import { Transition } from "@headlessui/react";
+import { useModal } from "@/contexts/ModalContext";
 
 interface Testimonial {
   img: string;
@@ -14,6 +15,8 @@ interface Testimonial {
 }
 
 export default function Testimonials() {
+  const { isModalOpen } = useModal();
+  
   // Generate avatar URL based on name
   const getAvatarUrl = (name: string) => {
     return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=56&background=random&color=fff&bold=true&rounded=true`;
@@ -69,8 +72,19 @@ export default function Testimonials() {
   const autorotateTiming: number = 7000;
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Pause rotation when modal is open
   useEffect(() => {
-    if (!autorotate) {
+    if (isModalOpen) {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    }
+  }, [isModalOpen]);
+
+  useEffect(() => {
+    // Don't autorotate if modal is open or autorotate is disabled
+    if (!autorotate || isModalOpen) {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
         intervalRef.current = null;
@@ -88,12 +102,21 @@ export default function Testimonials() {
         intervalRef.current = null;
       }
     };
-  }, [autorotate, testimonials.length, autorotateTiming]);
+  }, [autorotate, testimonials.length, autorotateTiming, isModalOpen]);
 
   return (
-    <section id="testimonials" className="py-12 sm:py-16 md:py-20 bg-white">
+    <section 
+      id="testimonials" 
+      className="py-12 sm:py-16 md:py-20 bg-white"
+      style={{
+        contain: 'layout style paint',
+        isolation: 'isolate',
+        transform: 'translateZ(0)',
+        willChange: 'auto'
+      }}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto" style={{ contain: 'layout' }}>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2">
             What Our Members Say
           </h2>
@@ -129,13 +152,23 @@ export default function Testimonials() {
             <div 
               className="mb-6 sm:mb-9 px-2"
               style={{ 
-                minHeight: '120px',
+                height: '180px',
                 position: 'relative',
-                contain: 'layout style paint',
-                isolation: 'isolate'
+                contain: 'strict',
+                isolation: 'isolate',
+                transform: 'translate3d(0, 0, 0)',
+                backfaceVisibility: 'hidden',
+                WebkitBackfaceVisibility: 'hidden'
               }}
             >
-              <div className="relative" style={{ contain: 'layout' }}>
+              <div 
+                className="relative" 
+                style={{ 
+                  contain: 'layout style paint',
+                  height: '100%',
+                  transform: 'translate3d(0, 0, 0)'
+                }}
+              >
                 {testimonials.map((testimonial, index) => (
                   <Transition
                     as="div"
@@ -152,14 +185,15 @@ export default function Testimonials() {
                       willChange: 'transform, opacity',
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
-                      transform: 'translateZ(0)'
+                      transform: 'translate3d(0, 0, 0)',
+                      contain: 'layout style paint'
                     }}
                   >
                     <div 
                       className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-primary-900 before:content-['\201C'] after:content-['\201D'] px-2"
                       style={{ 
                         willChange: 'transform, opacity',
-                        transform: 'translateZ(0)'
+                        transform: 'translate3d(0, 0, 0)'
                       }}
                     >
                       {testimonial.quote}
