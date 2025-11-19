@@ -43,7 +43,7 @@ export default function WhyThisWorks() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-primary-50 via-secondary-50/30 to-white">
+    <section className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Two-column layout */}

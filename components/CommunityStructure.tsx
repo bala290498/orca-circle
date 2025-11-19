@@ -28,7 +28,7 @@ export default function CommunityStructure() {
                     <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
-                  </div>
+              </div>
                   <p className="text-gray-700 font-medium flex-1" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                     Group heads communicate and coordinate engagement activities
                   </p>
@@ -39,7 +39,7 @@ export default function CommunityStructure() {
                     <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                     </svg>
-                  </div>
+              </div>
                   <p className="text-gray-700 font-medium flex-1" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                     Bring your own group to automatically become a group head
                   </p>
@@ -50,39 +50,39 @@ export default function CommunityStructure() {
                     <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                     </svg>
-                  </div>
+              </div>
                   <p className="text-gray-700 font-medium flex-1" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                     Group heads is granted extra non-financial benefits
                   </p>
-                </div>
               </div>
             </div>
+          </div>
 
             {/* Right Column: Visual representation */}
             <div className="flex items-stretch">
               <div className="bg-primary-100 rounded-lg p-4 sm:p-6 w-full h-full flex flex-col">
                 <div className="flex flex-col items-center justify-center gap-3 sm:gap-4 flex-1">
-                  {/* GH Circle - Separate line */}
-                  <div className="bg-primary-600 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center font-bold text-xs sm:text-sm md:text-base">
-                    GH
-                  </div>
-                  
-                  {/* Plus Icon - Separate line */}
-                  <span className="text-gray-400 font-semibold text-lg sm:text-xl md:text-2xl">+</span>
-                  
+                {/* GH Circle - Separate line */}
+                <div className="bg-primary-600 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center font-bold text-xs sm:text-sm md:text-base">
+                  GH
+                </div>
+                
+                {/* Plus Icon - Separate line */}
+                <span className="text-gray-400 font-semibold text-lg sm:text-xl md:text-2xl">+</span>
+                
                   {/* Member Circles - Two rows */}
                   <div className="flex flex-col items-center justify-center gap-2 sm:gap-3">
                     {/* First row: M1-M5 */}
                     <div className="flex items-center justify-center gap-2 sm:gap-3">
                       {[...Array(5)].map((_, i) => (
-                        <div
-                          key={i}
-                          className="bg-primary-300 text-primary-900 rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center font-bold text-xs sm:text-sm"
-                        >
-                          M{i + 1}
-                        </div>
-                      ))}
+                    <div
+                      key={i}
+                      className="bg-primary-300 text-primary-900 rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center font-bold text-xs sm:text-sm"
+                    >
+                      M{i + 1}
                     </div>
+                  ))}
+                </div>
                     {/* Second row: M6-M10 */}
                     <div className="flex items-center justify-center gap-2 sm:gap-3">
                       {[...Array(5)].map((_, i) => (

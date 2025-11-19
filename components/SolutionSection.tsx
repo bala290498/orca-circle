@@ -5,7 +5,7 @@ import { useModal } from "@/contexts/ModalContext";
 export default function SolutionSection() {
   const { openModal } = useModal();
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-primary-50/50 to-white">
+    <section className="py-12 sm:py-16 md:py-20 bg-secondary-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Two-column layout */}

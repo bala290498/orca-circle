@@ -41,7 +41,7 @@ export const StoriesContent = ({
 export type StoryProps = HTMLAttributes<HTMLDivElement>;
 
 export const Story = ({ className, ...props }: StoryProps) => (
-  <CarouselItem className={cn('basis-auto !w-[280px] sm:!w-[320px] md:!w-[360px] pl-2 md:pl-4', className)}>
+  <CarouselItem className={cn('basis-auto !w-[280px] sm:!w-[320px] md:!w-[360px]', className)}>
     <div
       className={cn(
         'group relative overflow-hidden rounded-3xl bg-muted/40',

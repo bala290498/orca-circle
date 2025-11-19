@@ -8,7 +8,6 @@ import WhyThisWorks from '@/components/WhyThisWorks'
 import HowItWorks from '@/components/HowItWorks'
 import MemberBenefits from '@/components/MemberBenefits'
 import BusinessPillars from '@/components/BusinessPillars'
-import StoriesSection from '@/components/StoriesSection'
 import Membership from '@/components/Membership'
 import CommunityStructure from '@/components/CommunityStructure'
 import Testimonials from '@/components/Testimonials'
@@ -63,25 +62,22 @@ export default function Home() {
       {/* 7. Our Three Business Pillars */}
       <BusinessPillars />
 
-      {/* 8. Community Stories */}
-      <StoriesSection />
-
-      {/* 9. Membership */}
+      {/* 8. Membership */}
       <Membership />
 
-      {/* 10. Community Structure */}
+      {/* 9. Community Structure */}
       <CommunityStructure />
 
-      {/* 11. Testimonials (Social Proof) */}
+      {/* 10. Testimonials (Social Proof) */}
       <Testimonials />
 
-      {/* 12. FAQ (Remove objections) */}
+      {/* 11. FAQ (Remove objections) */}
       <FAQ />
 
-      {/* 13. Final Call to Action */}
+      {/* 12. Final Call to Action */}
       <FinalCTA />
 
-      {/* 14. Footer */}
+      {/* 13. Footer */}
       <Footer />
 
       {/* Global Join Form Modal */}

@@ -37,7 +37,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-12 sm:py-16 md:py-20 bg-gray-50">
+    <section id="faq" className="py-12 sm:py-16 md:py-20 bg-secondary-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2" style={{ fontSize: 'clamp(1.5rem, 3vw + 1rem, 1.875rem)' }}>

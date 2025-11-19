@@ -107,7 +107,7 @@ export default function Testimonials() {
   return (
     <section 
       id="testimonials" 
-      className="py-12 sm:py-16 md:py-20 bg-white overflow-x-hidden"
+      className="py-12 sm:py-16 md:py-20 bg-primary-50 overflow-x-hidden"
       style={{
         contain: 'layout style paint',
         isolation: 'isolate',
@@ -150,7 +150,7 @@ export default function Testimonials() {
               </div>
             </div>
             <div 
-              className="mb-6 sm:mb-9 px-2"
+              className="mb-3 sm:mb-4 px-2"
               style={{ 
                 height: '180px',
                 position: 'relative',

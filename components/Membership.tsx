@@ -46,7 +46,7 @@ export default function Membership() {
   ];
 
   return (
-    <section id="membership" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-secondary-50/20 to-white">
+    <section id="membership" className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="mb-4 sm:mb-6 px-2" style={{ fontSize: 'clamp(1.5rem, 2.5vw + 1rem, 2.5rem)' }}>

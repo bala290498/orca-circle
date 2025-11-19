@@ -64,7 +64,7 @@ export default function MemberBenefits() {
   ];
 
   return (
-    <section id="benefits" className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-primary-50/30 to-white">
+    <section id="benefits" className="py-12 sm:py-16 md:py-20 bg-primary-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Two-column layout */}
