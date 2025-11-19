@@ -31,7 +31,7 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
   const openWhatsApp = () => {
     // Create pre-filled message template
     const message = encodeURIComponent(
-      `Hello! I'm ${userName} and I just joined Orca Circle community. My WhatsApp number is ${userWhatsApp}. I'm excited to be part of this community and look forward to connecting with everyone!`
+      `Hello! I'm ${userName} and I just joined Trust Reach Club community. My WhatsApp number is ${userWhatsApp}. I'm excited to be part of this community and look forward to connecting with everyone!`
     );
     
     // Format phone number (remove any spaces, dashes, etc.)
@@ -82,7 +82,7 @@ export default function GreetingModal({ isOpen, onClose, userName, userWhatsApp 
           <div className="mb-3 space-y-1.5">
             <div className="text-3xl sm:text-4xl mb-1.5">🎉</div>
             <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">
-              Welcome to Orca Circle
+              Welcome to Trust Reach Club
             </h2>
             {userName && (
               <p className="text-lg sm:text-xl md:text-2xl font-medium text-gray-900">

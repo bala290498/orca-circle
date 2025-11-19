@@ -39,7 +39,7 @@ export default function JoinFormModal({ isOpen, onClose }: JoinFormModalProps) {
   const openWhatsApp = (name: string, whatsapp: string) => {
     // Create pre-filled message template
     const message = encodeURIComponent(
-      `Hello! I'm ${name} and I just joined Orca Circle community. My WhatsApp number is ${whatsapp}. I'm excited to be part of this community and look forward to connecting with everyone!`
+      `Hello! I'm ${name} and I just joined Trust Reach Club community. My WhatsApp number is ${whatsapp}. I'm excited to be part of this community and look forward to connecting with everyone!`
     );
     
     // Format phone number (remove any spaces, dashes, etc.)

@@ -2,6 +2,7 @@
 
 import { useModal } from "@/contexts/ModalContext";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const { openModal } = useModal();
@@ -71,14 +72,20 @@ export default function Header() {
           <div className="flex items-center">
             <a
               href="/"
-              className="font-bold text-gray-900 hover:text-primary-600 transition-colors"
-              style={{ fontSize: 'clamp(1.125rem, 2vw + 0.5rem, 1.25rem)' }}
+              className="flex items-center"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              Orca Circle
+              <Image
+                src="/images/logo.png"
+                alt="Trust Reach Club"
+                width={120}
+                height={40}
+                className="h-8 sm:h-10 w-auto"
+                priority
+              />
             </a>
           </div>
 

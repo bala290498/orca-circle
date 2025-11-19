@@ -1,6 +1,6 @@
-# Orca Circle - Community Landing Page
+# Trust Reach Club - Community Landing Page
 
-A Next.js landing page for Orca Circle, a community-driven business growth platform.
+A Next.js landing page for Trust Reach Club, a community-driven business growth platform.
 
 ## Features
 

@@ -104,7 +104,7 @@ export default function Footer() {
             <div className="flex justify-center">
               {/* Copyright */}
               <p className="text-xs sm:text-sm text-gray-600 text-center">
-                © {currentYear} Orca Circle — All rights reserved.
+                © {currentYear} Trust Reach Club — All rights reserved.
               </p>
             </div>
           </div>
