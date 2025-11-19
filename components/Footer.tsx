@@ -9,7 +9,6 @@ export default function Footer() {
             {/* About Column */}
             <div className="text-center pb-6 md:pb-0 md:pr-8 lg:pr-12 relative">
               <div className="hidden md:block absolute right-0 top-4 bottom-4 w-px bg-gray-600"></div>
-              <div className="md:hidden mx-12 border-b border-gray-600 mb-6"></div>
               <h3 className="text-white font-semibold text-sm sm:text-base mb-4">About</h3>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -33,7 +32,6 @@ export default function Footer() {
             {/* Community Column */}
             <div className="text-center pb-6 md:pb-0 md:pr-8 lg:pr-12 relative">
               <div className="hidden md:block absolute right-0 top-4 bottom-4 w-px bg-gray-600"></div>
-              <div className="md:hidden mx-12 border-b border-gray-600 mb-6"></div>
               <h3 className="text-white font-semibold text-sm sm:text-base mb-4">Community</h3>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -57,7 +55,6 @@ export default function Footer() {
             {/* Resources Column */}
             <div className="text-center pb-6 md:pb-0 md:pr-8 lg:pr-12 relative">
               <div className="hidden md:block absolute right-0 top-4 bottom-4 w-px bg-gray-600"></div>
-              <div className="md:hidden mx-12 border-b border-gray-600 mb-6"></div>
               <h3 className="text-white font-semibold text-sm sm:text-base mb-4">Resources</h3>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -80,7 +77,6 @@ export default function Footer() {
 
             {/* Legal Column */}
             <div className="text-center">
-              <div className="md:hidden mx-12 border-b border-gray-600 mb-6"></div>
               <h3 className="text-white font-semibold text-sm sm:text-base mb-4">Legal</h3>
               <ul className="space-y-2 text-sm">
                 <li>

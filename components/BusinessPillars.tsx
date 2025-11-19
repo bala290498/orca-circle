@@ -45,7 +45,7 @@ export default function BusinessPillars() {
                 key={index}
                 className="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 hover:border-primary-300 hover:shadow-md transition-all duration-300 flex flex-col"
               >
-                <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-primary-50 rounded-full mb-4 sm:mb-6 flex-shrink-0">
+                <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-primary-50 rounded-full mb-4 sm:mb-6 flex-shrink-0 mx-auto">
                   {pillar.icon}
                 </div>
                 <h3 className="font-bold text-gray-900 mb-3 sm:mb-4" style={{ fontSize: 'clamp(1rem, 1.5vw + 0.5rem, 1.25rem)' }}>
