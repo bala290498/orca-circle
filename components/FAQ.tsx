@@ -22,7 +22,7 @@ export default function FAQ() {
     {
       question: "Are rewards real?",
       answer:
-        "Yes — vouchers & subscriptions distributed monthly. Members receive genuine Flipkart gift vouchers, Amazon gift vouchers, platform subscriptions, and more.",
+        "Yes — Members receive genuine Flipkart gift vouchers, Amazon gift vouchers, platform subscriptions, and more.",
     },
     {
       question: "Can I promote my business?",
