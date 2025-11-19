@@ -56,7 +56,7 @@ export default function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-bold text-gray-900 mb-4 sm:mb-6 leading-tight" style={{ fontSize: 'clamp(1.5rem, 4vw + 1rem, 2.5rem)' }}>
+          <h1 className="font-bold text-gray-900 mb-4 sm:mb-6 leading-tight" style={{ fontSize: 'clamp(1.5rem, 2.5vw + 1rem, 2.5rem)' }}>
             Grow Your Business Faster With the Power of Community
           </h1>
 

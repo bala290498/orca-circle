@@ -34,6 +34,8 @@ const StarBorder = <T extends React.ElementType = "button">({
         style={{
           background: `radial-gradient(circle, ${color}, transparent 10%)`,
           animationDuration: speed,
+          maxWidth: 'none',
+          pointerEvents: 'none',
         }}
       ></div>
       <div
@@ -41,6 +43,8 @@ const StarBorder = <T extends React.ElementType = "button">({
         style={{
           background: `radial-gradient(circle, ${color}, transparent 10%)`,
           animationDuration: speed,
+          maxWidth: 'none',
+          pointerEvents: 'none',
         }}
       ></div>
       <div className="relative z-10 bg-white text-gray-900 rounded-[20px] h-full flex flex-col">

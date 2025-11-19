@@ -40,7 +40,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden w-full max-w-full">
       {/* 1. Hero Section */}
       <HeroSection />
 
