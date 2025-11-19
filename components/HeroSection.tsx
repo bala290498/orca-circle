@@ -56,12 +56,12 @@ export default function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+          <h1 className="font-bold text-gray-900 mb-4 sm:mb-6 leading-tight" style={{ fontSize: 'clamp(1.5rem, 4vw + 1rem, 2.5rem)' }}>
             Grow Your Business Faster With the Power of Community
           </h1>
 
           {/* Sub-headline */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 leading-relaxed">
+          <p className="text-gray-700 mb-6 sm:mb-8 leading-relaxed" style={{ fontSize: 'clamp(1rem, 2vw + 0.5rem, 1.25rem)' }}>
             Instant reach, real engagement, and rewards — all from a supportive member network.
           </p>
 
@@ -69,25 +69,25 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center items-center">
             <button
               onClick={openModal}
-              className="w-full max-w-[280px] sm:max-w-[300px] bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="w-full max-w-[90%] sm:max-w-[18.75rem] bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
             >
               Join the Community
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}
-              className="w-full max-w-[280px] sm:max-w-[300px] border-2 border-primary-600 text-primary-600 hover:bg-primary-50 font-semibold py-2.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105"
+              className="w-full max-w-[90%] sm:max-w-[18.75rem] border-2 border-primary-600 text-primary-600 hover:bg-primary-50 font-semibold py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
             >
               Learn How It Works
             </button>
           </div>
 
           {/* Microcopy */}
-          <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8">
+          <p className="text-gray-600 mb-6 sm:mb-8" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
             No fees • 5–15 minutes/day
           </p>
 
           {/* Trust Line */}
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm sm:text-base text-gray-700">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-gray-700" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
             <div className="flex items-center space-x-2">
               <svg className="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />

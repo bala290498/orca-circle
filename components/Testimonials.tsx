@@ -117,12 +117,12 @@ export default function Testimonials() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto" style={{ contain: 'layout' }}>
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2">
+          <h2 className="font-bold text-gray-900 mb-8 sm:mb-12 text-center px-2" style={{ fontSize: 'clamp(1.5rem, 3vw + 1rem, 1.875rem)' }}>
             What Our Members Say
           </h2>
           <div className="mx-auto w-full max-w-3xl text-center px-2">
             <div className="relative h-24 sm:h-32">
-              <div className="pointer-events-none absolute left-1/2 top-0 h-[300px] w-[300px] sm:h-[480px] sm:w-[480px] -translate-x-1/2 before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-b before:from-primary-500/25 before:via-primary-500/5 before:via-25% before:to-primary-500/0 before:to-75%">
+              <div className="pointer-events-none absolute left-1/2 top-0 h-[18.75rem] w-[18.75rem] sm:h-[30rem] sm:w-[30rem] -translate-x-1/2 before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-b before:from-primary-500/25 before:via-primary-500/5 before:via-25% before:to-primary-500/0 before:to-75%">
                 <div className="h-24 sm:h-32 [mask-image:_linear-gradient(0deg,transparent,theme(colors.white)_20%,theme(colors.white))]">
                   {testimonials.map((testimonial, index) => (
                     <Transition
@@ -206,7 +206,7 @@ export default function Testimonials() {
               {testimonials.map((testimonial, index) => (
                 <button
                   key={index}
-                  className={`m-1.5 inline-flex items-center justify-center whitespace-nowrap rounded-full px-2 sm:px-3 py-1.5 text-xs shadow-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring focus-visible:ring-primary-300 min-h-[32px] text-center ${
+                  className={`m-1.5 inline-flex items-center justify-center whitespace-nowrap rounded-full px-2 sm:px-3 py-1.5 text-xs shadow-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring focus-visible:ring-primary-300 min-h-[2rem] text-center ${
                     active === index
                       ? "bg-primary-500 text-white shadow-primary-950/10"
                       : "bg-white text-primary-900 hover:bg-primary-100"

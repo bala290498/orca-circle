@@ -12,23 +12,23 @@ export default function SolutionSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left Column: Heading */}
             <div className="flex flex-col lg:sticky lg:top-24">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+              <h2 className="font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontSize: 'clamp(1.25rem, 3vw + 1rem, 2.25rem)' }}>
                 Solutions
               </h2>
-              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900">
+              <h3 className="font-bold text-gray-900" style={{ fontSize: 'clamp(1rem, 2.5vw + 0.75rem, 1.5rem)' }}>
                 A Community That Actively Promotes and Supports Each Other
               </h3>
             </div>
 
             {/* Right Column: Content */}
             <div>
-              <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-8 sm:mb-10 leading-relaxed">
+              <p className="text-gray-700 mb-8 sm:mb-10 leading-relaxed" style={{ fontSize: 'clamp(1rem, 1.5vw + 0.5rem, 1.25rem)' }}>
                 Our member-driven ecosystem helps businesses grow through consistent social engagement. Members follow, like, share, and comment across platforms — creating instant traction and real visibility.
               </p>
 
               {/* Solution Tiles */}
               <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center">
+                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[5rem] flex items-center">
                   <div className="flex items-center space-x-3 w-full">
                     <div className="flex-shrink-0 flex items-center">
                       <svg
@@ -45,13 +45,13 @@ export default function SolutionSection() {
                         />
                       </svg>
                     </div>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
+                    <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                       Authentic engagement from real people
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center">
+                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[5rem] flex items-center">
                   <div className="flex items-center space-x-3 w-full">
                     <div className="flex-shrink-0 flex items-center">
                       <svg
@@ -68,13 +68,13 @@ export default function SolutionSection() {
                         />
                       </svg>
                     </div>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
+                    <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                       Fast audience growth
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center">
+                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[5rem] flex items-center">
                   <div className="flex items-center space-x-3 w-full">
                     <div className="flex-shrink-0 flex items-center">
                       <svg
@@ -91,13 +91,13 @@ export default function SolutionSection() {
                         />
                       </svg>
                     </div>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
+                    <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                       Zero cost to join
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center">
+                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[5rem] flex items-center">
                   <div className="flex items-center space-x-3 w-full">
                     <div className="flex-shrink-0 flex items-center">
                       <svg
@@ -114,13 +114,13 @@ export default function SolutionSection() {
                         />
                       </svg>
                     </div>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
+                    <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                       Benefits for every active member
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center">
+                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[5rem] flex items-center">
                   <div className="flex items-center space-x-3 w-full">
                     <div className="flex-shrink-0 flex items-center">
                       <svg
@@ -137,7 +137,7 @@ export default function SolutionSection() {
                         />
                       </svg>
                     </div>
-                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
+                    <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                       Boosted Trust and Credibility
                     </p>
                   </div>
@@ -148,7 +148,7 @@ export default function SolutionSection() {
               <div className="text-center lg:text-left flex justify-center lg:justify-start">
                 <button
                   onClick={openModal}
-                  className="w-full max-w-[280px] sm:max-w-[300px] bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="w-full max-w-[90%] sm:max-w-[18.75rem] bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
                 >
                   Become an Active Member
                 </button>

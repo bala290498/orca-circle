@@ -50,17 +50,17 @@ export default function WhyThisWorks() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left Column: Heading */}
             <div className="flex flex-col lg:sticky lg:top-24">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+              <h2 className="font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontSize: 'clamp(1.25rem, 3vw + 1rem, 2.25rem)' }}>
                 Why This Works
               </h2>
-              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-gray-900">
+              <h3 className="font-bold text-gray-900" style={{ fontSize: 'clamp(1rem, 2.5vw + 0.75rem, 1.5rem)' }}>
                 A Proven Approach That Delivers Real Results
               </h3>
             </div>
 
             {/* Right Column: Content */}
             <div>
-              <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6 sm:mb-8">
+              <p className="text-gray-700 leading-relaxed mb-6 sm:mb-8" style={{ fontSize: 'clamp(1rem, 1.5vw + 0.5rem, 1.25rem)' }}>
                 By leveraging the power of collective engagement, we create sustainable growth that benefits everyone involved.
               </p>
 
@@ -69,13 +69,13 @@ export default function WhyThisWorks() {
                 {points.map((point, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[80px] flex items-center"
+                    className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[5rem] flex items-center"
                   >
                     <div className="flex items-center space-x-3 w-full">
                       <div className="flex-shrink-0 flex items-center">
                         {point.icon}
                       </div>
-                      <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-medium">
+                      <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                         {point.text}
                       </p>
                     </div>

@@ -6,6 +6,14 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      'xs': '320px',   // Mobile small
+      'sm': '480px',   // Mobile large
+      'md': '768px',   // Tablet
+      'lg': '1024px',  // Desktop
+      'xl': '1280px',  // Desktop large
+      '2xl': '1536px', // Desktop extra large
+    },
     extend: {
       colors: {
         primary: {
