@@ -133,7 +133,7 @@ export default function JoinFormModal({ isOpen, onClose }: JoinFormModalProps) {
 
         {/* Form Content */}
         <div className="p-4 sm:p-6 md:p-8">
-          <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-4 sm:mb-6">
+          <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-4 sm:mb-6 text-center">
             Join the Community Today
           </h3>
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
@@ -201,13 +201,15 @@ export default function JoinFormModal({ isOpen, onClose }: JoinFormModalProps) {
                 Something went wrong. Please try again.
               </div>
             )}
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-            >
-              {isSubmitting ? "Submitting..." : "Join Now (Free Forever)"}
-            </button>
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2.5 px-6 rounded-full text-sm sm:text-base transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Submitting..." : "Join Now (Free Forever)"}
+              </button>
+            </div>
           </form>
         </div>
       </div>
