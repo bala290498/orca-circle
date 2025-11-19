@@ -8,10 +8,10 @@ export default function SolutionSection() {
     <section className="py-12 sm:py-16 md:py-20 bg-secondary-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Two-column layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            {/* Left Column: Heading - Sticky on desktop */}
-            <div className="flex flex-col lg:sticky lg:top-24 lg:self-start">
+          {/* Single column layout */}
+          <div className="max-w-4xl mx-auto">
+            {/* Heading */}
+            <div className="mb-6 sm:mb-8">
               <h2 className="font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontSize: 'clamp(1.25rem, 3vw + 1rem, 2.25rem)' }}>
                 Solution
               </h2>
@@ -20,17 +20,17 @@ export default function SolutionSection() {
               </h3>
             </div>
 
-            {/* Right Column: Content */}
+            {/* Content */}
             <div>
               <p className="text-gray-700 mb-8 sm:mb-10 leading-relaxed" style={{ fontSize: 'clamp(1rem, 1.5vw + 0.5rem, 1.25rem)' }}>
                 Our member-driven ecosystem helps businesses grow through consistent social engagement. Members follow, like, share, and comment across platforms — creating instant traction and real visibility.
               </p>
 
               {/* Solution Tiles */}
-              <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10">
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[5rem] flex items-center">
-                  <div className="flex items-center space-x-3 w-full">
-                    <div className="flex-shrink-0 flex items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-8 sm:mb-10">
+                <div className="bg-gray-50 p-4 sm:p-5 border-l-4 border-green-500">
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0">
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6 text-green-500"
                         fill="none"
@@ -45,15 +45,15 @@ export default function SolutionSection() {
                         />
                       </svg>
                     </div>
-                    <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
+                    <p className="text-gray-900 font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                       Authentic Engagement From Real People
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[5rem] flex items-center">
-                  <div className="flex items-center space-x-3 w-full">
-                    <div className="flex-shrink-0 flex items-center">
+                <div className="bg-gray-50 p-4 sm:p-5 border-l-4 border-green-500">
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0">
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6 text-green-500"
                         fill="none"
@@ -68,15 +68,15 @@ export default function SolutionSection() {
                         />
                       </svg>
                     </div>
-                    <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
+                    <p className="text-gray-900 font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                       Fast Audience Growth
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[5rem] flex items-center">
-                  <div className="flex items-center space-x-3 w-full">
-                    <div className="flex-shrink-0 flex items-center">
+                <div className="bg-gray-50 p-4 sm:p-5 border-l-4 border-green-500">
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0">
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6 text-green-500"
                         fill="none"
@@ -91,15 +91,15 @@ export default function SolutionSection() {
                         />
                       </svg>
                     </div>
-                    <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
+                    <p className="text-gray-900 font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                       Zero Cost to Join
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[5rem] flex items-center">
-                  <div className="flex items-center space-x-3 w-full">
-                    <div className="flex-shrink-0 flex items-center">
+                <div className="bg-gray-50 p-4 sm:p-5 border-l-4 border-green-500">
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0">
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6 text-green-500"
                         fill="none"
@@ -114,15 +114,15 @@ export default function SolutionSection() {
                         />
                       </svg>
                     </div>
-                    <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
+                    <p className="text-gray-900 font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                       Benefits for Every Active Member
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[5rem] flex items-center">
-                  <div className="flex items-center space-x-3 w-full">
-                    <div className="flex-shrink-0 flex items-center">
+                <div className="bg-gray-50 p-4 sm:p-5 border-l-4 border-green-500">
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0">
                       <svg
                         className="w-5 h-5 sm:w-6 sm:h-6 text-green-500"
                         fill="none"
@@ -137,15 +137,38 @@ export default function SolutionSection() {
                         />
                       </svg>
                     </div>
-                    <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
+                    <p className="text-gray-900 font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                       Boosted Trust and Credibility
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 p-4 sm:p-5 border-l-4 border-green-500">
+                  <div className="flex items-center space-x-3">
+                    <div className="flex-shrink-0">
+                      <svg
+                        className="w-5 h-5 sm:w-6 sm:h-6 text-green-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                        />
+                      </svg>
+                    </div>
+                    <p className="text-gray-900 font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
+                      Continuous Support and Growth
                     </p>
                   </div>
                 </div>
               </div>
 
               {/* CTA */}
-              <div className="text-center lg:text-left flex justify-center lg:justify-start">
+              <div className="text-center flex justify-center">
                 <button
                   onClick={openModal}
                   className="w-full max-w-[90%] sm:max-w-[18.75rem] bg-accent-500 hover:bg-accent-600 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}

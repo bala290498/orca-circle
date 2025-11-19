@@ -5,16 +5,17 @@ export default function ProblemSection() {
     "Competing With Big Brands Makes Visibility Hard",
     "Engagement Fades Without Steady Support",
     "New Creators Struggle to Get Initial Traction",
+    "Building a Loyal Audience Takes Too Long",
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-primary-50">
+    <section className="py-12 sm:py-16 md:py-20 bg-primary-50" id="problem">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Two-column layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            {/* Left Column: Heading - Sticky on desktop */}
-            <div className="flex flex-col lg:sticky lg:top-24 lg:self-start">
+          {/* Single column layout */}
+          <div className="max-w-4xl mx-auto">
+            {/* Heading */}
+            <div className="mb-6 sm:mb-8">
               <h2 className="font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontSize: 'clamp(1.25rem, 3vw + 1rem, 2.25rem)' }}>
                 Problem
               </h2>
@@ -23,21 +24,21 @@ export default function ProblemSection() {
               </h3>
             </div>
 
-            {/* Right Column: Content */}
+            {/* Content */}
             <div>
               <p className="text-gray-700 leading-relaxed mb-6 sm:mb-8" style={{ fontSize: 'clamp(1rem, 1.5vw + 0.5rem, 1.25rem)' }}>
                 Today, visibility is harder than ever. Paid promotions drain budgets. Organic reach is unpredictable. New businesses face the cold start problem — starting with zero audience and zero momentum.
               </p>
 
               {/* Problem Tiles */}
-              <div className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                 {problems.map((problem, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 hover:border-primary-300 hover:shadow-lg transition-all duration-300 min-h-[5rem] flex items-center"
+                    className="bg-gray-50 p-4 sm:p-5 border-l-4 border-red-500"
                   >
-                    <div className="flex items-center space-x-3 w-full">
-                      <div className="flex-shrink-0 flex items-center">
+                    <div className="flex items-center space-x-3">
+                      <div className="flex-shrink-0">
                         <svg
                           className="w-5 h-5 sm:w-6 sm:h-6 text-red-500"
                           fill="none"
@@ -52,7 +53,7 @@ export default function ProblemSection() {
                           />
                         </svg>
                       </div>
-                      <p className="text-gray-700 leading-relaxed" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
+                      <p className="text-gray-900 font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
                         {problem}
                       </p>
                     </div>
