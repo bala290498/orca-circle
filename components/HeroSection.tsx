@@ -5,28 +5,64 @@ import { useModal } from "@/contexts/ModalContext";
 
 const avatars = [
   {
-    imageUrl: "https://avatars.githubusercontent.com/u/16860528",
-    profileUrl: "https://github.com/dillionverma",
+    firstName: "Walsh",
+    lastName: "Smith",
   },
   {
-    imageUrl: "https://avatars.githubusercontent.com/u/20110627",
-    profileUrl: "https://github.com/tomonarifeehan",
+    firstName: "Sarah",
+    lastName: "Johnson",
   },
   {
-    imageUrl: "https://avatars.githubusercontent.com/u/106103625",
-    profileUrl: "https://github.com/BankkRoll",
+    firstName: "Michael",
+    lastName: "Brown",
   },
   {
-    imageUrl: "https://avatars.githubusercontent.com/u/59228569",
-    profileUrl: "https://github.com/safethecode",
+    firstName: "Emily",
+    lastName: "Davis",
   },
   {
-    imageUrl: "https://avatars.githubusercontent.com/u/59442788",
-    profileUrl: "https://github.com/sanjay-mali",
+    firstName: "Ravid",
+    lastName: "Wilson",
   },
   {
-    imageUrl: "https://avatars.githubusercontent.com/u/89768406",
-    profileUrl: "https://github.com/itsarghyadas",
+    firstName: "Jessica",
+    lastName: "Martinez",
+  },
+  {
+    firstName: "Robert",
+    lastName: "Taylor",
+  },
+  {
+    firstName: "Amanda",
+    lastName: "Anderson",
+  },
+  {
+    firstName: "Christopher",
+    lastName: "Thomas",
+  },
+  {
+    firstName: "Lisa",
+    lastName: "Jackson",
+  },
+  {
+    firstName: "Daniel",
+    lastName: "White",
+  },
+  {
+    firstName: "Michelle",
+    lastName: "Harris",
+  },
+  {
+    firstName: "James",
+    lastName: "Moore",
+  },
+  {
+    firstName: "Jennifer",
+    lastName: "Lee",
+  },
+  {
+    firstName: "William",
+    lastName: "Garcia",
   },
 ];
 
@@ -47,12 +83,12 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-secondary-50 to-primary-100 pt-20 sm:pt-24">
+    <section className="relative min-h-screen flex items-center justify-center bg-background pt-20 sm:pt-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Avatar Circles */}
           <div className="mb-6 sm:mb-8 flex justify-center">
-            <AvatarCircles numPeople={99} avatarUrls={avatars} />
+            <AvatarCircles numPeople={112} avatarUrls={avatars} />
           </div>
 
           {/* Headline */}
@@ -69,7 +105,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center items-center">
             <button
               onClick={openModal}
-              className="w-full max-w-[90%] sm:max-w-[16rem] bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2 px-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
+              className="w-full max-w-[90%] sm:max-w-[16rem] bg-accent-500 hover:bg-accent-600 text-white font-semibold py-2 px-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
             >
               Join the Community
             </button>
@@ -83,7 +119,7 @@ export default function HeroSection() {
 
           {/* Microcopy */}
           <p className="text-gray-600 mb-6 sm:mb-8" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
-            No fees • 5–15 minutes/day
+            No Cost • 5–15 Minutes Per Day
           </p>
 
           {/* Trust Line */}
@@ -92,19 +128,19 @@ export default function HeroSection() {
               <svg className="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
-              <span className="font-medium">20k+ members</span>
+              <span className="font-medium">100+ Members</span>
             </div>
             <div className="flex items-center space-x-2">
               <svg className="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
               </svg>
-              <span className="font-medium">10k+ businesses promoted</span>
+              <span className="font-medium">10+ Businesses Promoted</span>
             </div>
             <div className="flex items-center space-x-2">
               <svg className="w-5 h-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
-              <span className="font-medium">Free for life</span>
+              <span className="font-medium">Free for Life</span>
             </div>
           </div>
         </div>

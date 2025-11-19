@@ -13,7 +13,7 @@ export default function SolutionSection() {
             {/* Left Column: Heading - Sticky on desktop */}
             <div className="flex flex-col lg:sticky lg:top-24 lg:self-start">
               <h2 className="font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontSize: 'clamp(1.25rem, 3vw + 1rem, 2.25rem)' }}>
-                Solutions
+                Solution
               </h2>
               <h3 className="font-bold text-gray-900" style={{ fontSize: 'clamp(1rem, 2.5vw + 0.75rem, 1.5rem)' }}>
                 A Community That Actively Promotes and Supports Each Other
@@ -46,7 +46,7 @@ export default function SolutionSection() {
                       </svg>
                     </div>
                     <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
-                      Authentic engagement from real people
+                      Authentic Engagement From Real People
                     </p>
                   </div>
                 </div>
@@ -69,7 +69,7 @@ export default function SolutionSection() {
                       </svg>
                     </div>
                     <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
-                      Fast audience growth
+                      Fast Audience Growth
                     </p>
                   </div>
                 </div>
@@ -92,7 +92,7 @@ export default function SolutionSection() {
                       </svg>
                     </div>
                     <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
-                      Zero cost to join
+                      Zero Cost to Join
                     </p>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ export default function SolutionSection() {
                       </svg>
                     </div>
                     <p className="text-gray-700 leading-relaxed font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
-                      Benefits for every active member
+                      Benefits for Every Active Member
                     </p>
                   </div>
                 </div>
@@ -148,7 +148,7 @@ export default function SolutionSection() {
               <div className="text-center lg:text-left flex justify-center lg:justify-start">
                 <button
                   onClick={openModal}
-                  className="w-full max-w-[90%] sm:max-w-[18.75rem] bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
+                  className="w-full max-w-[90%] sm:max-w-[18.75rem] bg-accent-500 hover:bg-accent-600 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
                 >
                   Become an Active Member
                 </button>

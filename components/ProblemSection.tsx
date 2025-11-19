@@ -1,10 +1,10 @@
 export default function ProblemSection() {
   const problems = [
-    "Organic reach is extremely low for new businesses.",
-    "Paid ads are costly and unpredictable.",
-    "Competing with big brands makes visibility hard.",
-    "Engagement fades without steady support.",
-    "New creators struggle to get initial traction.",
+    "Organic Reach Is Extremely Low for New Businesses",
+    "Paid Advertisements (Ads) Are Costly and Unpredictable",
+    "Competing With Big Brands Makes Visibility Hard",
+    "Engagement Fades Without Steady Support",
+    "New Creators Struggle to Get Initial Traction",
   ];
 
   return (
@@ -16,7 +16,7 @@ export default function ProblemSection() {
             {/* Left Column: Heading - Sticky on desktop */}
             <div className="flex flex-col lg:sticky lg:top-24 lg:self-start">
               <h2 className="font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontSize: 'clamp(1.25rem, 3vw + 1rem, 2.25rem)' }}>
-                Problems
+                Problem
               </h2>
               <h3 className="font-bold text-gray-900" style={{ fontSize: 'clamp(1rem, 2.5vw + 0.75rem, 1.5rem)' }}>
                 Businesses Are Struggling to Get Reach and Real Engagement

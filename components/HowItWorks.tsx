@@ -2,22 +2,22 @@ export default function HowItWorks() {
   const steps = [
     {
       number: 1,
-      title: 'Members perform small engagement tasks',
+      title: 'Members Perform Small Engagement Tasks',
       description: 'Such as following, liking, commenting, and sharing.',
     },
     {
       number: 2,
-      title: 'Businesses gain reach, trust, and improved visibility',
+      title: 'Businesses Gain Reach, Trust, and Improved Visibility',
       description: 'Across platforms.',
     },
     {
       number: 3,
-      title: 'The community generates revenue',
+      title: 'The Community Generates Revenue',
       description: 'Through its business pillars.',
     },
     {
       number: 4,
-      title: 'Members receive valuable non-financial rewards',
+      title: 'Members Receive Valuable Non-Financial Rewards',
       description: 'Such as gift vouchers and platform subscriptions.',
     },
   ]
@@ -50,7 +50,7 @@ export default function HowItWorks() {
                   {/* Left Column - Timeline (Fixed Width) */}
                   <div className="hidden md:block relative w-[6.25rem] flex justify-center">
                     {/* Vertical timeline line */}
-                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 md:w-1 bg-gradient-to-b from-primary-400 via-primary-500 to-secondary-500 -translate-x-1/2"></div>
+                    <div className="absolute left-1/2 top-0 bottom-0 w-0.5 md:w-1 bg-primary-500 -translate-x-1/2"></div>
                     
                     {/* Timeline nodes */}
                     <div className="space-y-8">
@@ -90,7 +90,7 @@ export default function HowItWorks() {
                   {/* Mobile Layout - Single column */}
                   <div className="md:hidden relative">
                     {/* Continuous timeline line for mobile */}
-                    <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-400 via-primary-500 to-secondary-500"></div>
+                    <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-primary-500"></div>
                     
                     <div className="space-y-8">
                       {steps.map((step, index) => {

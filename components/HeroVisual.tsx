@@ -4,28 +4,52 @@ import { AvatarCircles } from "@/registry/magicui/avatar-circles";
 
 const avatars = [
   {
-    imageUrl: "https://avatars.githubusercontent.com/u/16860528",
-    profileUrl: "https://github.com/dillionverma",
+    firstName: "John",
+    lastName: "Smith",
   },
   {
-    imageUrl: "https://avatars.githubusercontent.com/u/20110627",
-    profileUrl: "https://github.com/tomonarifeehan",
+    firstName: "Sarah",
+    lastName: "Johnson",
   },
   {
-    imageUrl: "https://avatars.githubusercontent.com/u/106103625",
-    profileUrl: "https://github.com/BankkRoll",
+    firstName: "Michael",
+    lastName: "Brown",
   },
   {
-    imageUrl: "https://avatars.githubusercontent.com/u/59228569",
-    profileUrl: "https://github.com/safethecode",
+    firstName: "Emily",
+    lastName: "Davis",
   },
   {
-    imageUrl: "https://avatars.githubusercontent.com/u/59442788",
-    profileUrl: "https://github.com/sanjay-mali",
+    firstName: "David",
+    lastName: "Wilson",
   },
   {
-    imageUrl: "https://avatars.githubusercontent.com/u/89768406",
-    profileUrl: "https://github.com/itsarghyadas",
+    firstName: "Jessica",
+    lastName: "Martinez",
+  },
+  {
+    firstName: "Robert",
+    lastName: "Taylor",
+  },
+  {
+    firstName: "Amanda",
+    lastName: "Anderson",
+  },
+  {
+    firstName: "Christopher",
+    lastName: "Thomas",
+  },
+  {
+    firstName: "Lisa",
+    lastName: "Jackson",
+  },
+  {
+    firstName: "Daniel",
+    lastName: "White",
+  },
+  {
+    firstName: "Michelle",
+    lastName: "Harris",
   },
 ];
 
@@ -85,18 +109,28 @@ export default function HeroVisual() {
         </div>
         <div className="absolute -bottom-4 -left-4 hidden sm:block">
           <div className="flex items-center space-x-2 bg-white rounded-full px-4 py-2 shadow-lg border border-gray-100">
-            <div className="flex -space-x-2">
-              {avatars.slice(0, 3).map((avatar, idx) => (
-                <div
-                  key={idx}
-                  className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-400 to-secondary-400 border-2 border-white"
-                  style={{
-                    backgroundImage: `url(${avatar.imageUrl})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                  }}
-                ></div>
-              ))}
+            <div className="flex -space-x-4">
+              {avatars.slice(0, 6).map((avatar, idx) => {
+                const getInitials = (firstName: string, lastName: string) => {
+                  return `${firstName.charAt(0).toUpperCase()}${lastName.charAt(0).toUpperCase()}`;
+                };
+                const colors = [
+                  'bg-primary-500',
+                  'bg-secondary-500',
+                  'bg-accent-500',
+                  'bg-purple-500',
+                  'bg-amber-500',
+                  'bg-slate-500',
+                ];
+                return (
+                  <div
+                    key={idx}
+                    className={`w-8 h-8 rounded-full ${colors[idx % colors.length]} text-white text-xs font-semibold flex items-center justify-center border-2 border-white`}
+                  >
+                    {getInitials(avatar.firstName, avatar.lastName)}
+                  </div>
+                );
+              })}
             </div>
             <span className="text-xs font-medium text-gray-700">+17k</span>
           </div>

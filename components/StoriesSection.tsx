@@ -14,21 +14,21 @@ export default function StoriesSection() {
       number: 1,
       title: 'Community-Owned Businesses',
       description: 'Run entirely by active community members. Profits are reinvested into member rewards.',
-      color: 'bg-gray-900',
+      color: 'bg-gray-100',
     },
     {
       id: 2,
       number: 2,
       title: 'In-House Initiatives',
       description: 'Member-owned businesses get promotional support, exclusive discounts, and increased client reach.',
-      color: 'bg-gray-900',
+      color: 'bg-gray-100',
     },
     {
       id: 3,
       number: 3,
       title: 'Trusted Partner Program',
       description: 'External brands can promote instantly to our active community in return for fees that become member rewards.',
-      color: 'bg-gray-900',
+      color: 'bg-gray-100',
     },
   ];
 

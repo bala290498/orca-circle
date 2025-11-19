@@ -24,7 +24,7 @@ export default function AnnouncementBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-primary-600 to-secondary-500 text-white py-2 sm:py-2.5 px-4 shadow-md">
+    <div className="fixed top-0 left-0 right-0 z-[60] bg-accent-500 text-white py-2 sm:py-2.5 px-4 shadow-md">
       <div className="container mx-auto flex items-center justify-between">
         <p className="text-xs sm:text-sm font-medium text-center flex-1">
           Free forever — Join thousands growing together.

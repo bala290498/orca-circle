@@ -22,6 +22,87 @@ export default function Home() {
   const { isModalOpen, closeModal } = useModal();
   const [greetingModal, setGreetingModal] = useState({ isOpen: false, userName: "", userWhatsApp: "" });
 
+  // Get current section in view
+  const getCurrentSection = () => {
+    if (typeof window === 'undefined') return null;
+    
+    const sections = [
+      'how-it-works',
+      'benefits',
+      'membership',
+      'testimonials',
+      'faq'
+    ];
+
+    const scrollPosition = window.scrollY + 150; // Offset for header
+
+    for (const sectionId of sections) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const { offsetTop, offsetHeight } = element;
+        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          return sectionId;
+        }
+      }
+    }
+    return null;
+  };
+
+  // Restore scroll position on mobile after reload
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    const isMobile = window.innerWidth < 768; // md breakpoint
+    if (!isMobile) return;
+
+    const lastSection = localStorage.getItem('lastViewedSection');
+    if (lastSection) {
+      // Wait for page to fully load
+      const timer = setTimeout(() => {
+        const element = document.getElementById(lastSection);
+        if (element) {
+          const headerHeight = 120;
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - headerHeight;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'auto' // Instant scroll on reload
+          });
+        }
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // Track scroll position and save last viewed section on mobile
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    const isMobile = window.innerWidth < 768; // md breakpoint
+    if (!isMobile) return;
+
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentSection = getCurrentSection();
+          if (currentSection) {
+            localStorage.setItem('lastViewedSection', currentSection);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   useEffect(() => {
     const handleShowGreeting = (event: CustomEvent) => {
       const { name, whatsapp } = event.detail;

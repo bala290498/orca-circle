@@ -57,12 +57,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 right-0 z-50 bg-white transition-all duration-300 ${
         hasAnnouncement ? "top-[2.5rem] sm:top-[2.75rem]" : "top-0"
       } ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-sm shadow-md"
-          : "bg-white/80 backdrop-blur-sm"
+          ? "shadow-md"
+          : ""
       }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">

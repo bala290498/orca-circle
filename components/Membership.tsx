@@ -63,7 +63,7 @@ export default function Membership() {
             </GradientText>
           </h2>
           <p className="text-gray-700 leading-relaxed max-w-[90%] sm:max-w-2xl mx-auto mb-8 sm:mb-10 px-2" style={{ fontSize: 'clamp(1rem, 1.5vw + 0.5rem, 1.25rem)' }}>
-            Stay active and Grow with your community
+            Stay Active and Grow With Your Community
           </p>
           
           {/* Features - Simple List */}
@@ -86,7 +86,7 @@ export default function Membership() {
           {/* Join Button */}
           <button
             onClick={openModal}
-            className="w-full max-w-[90%] sm:max-w-[18.75rem] bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
+            className="w-full max-w-[90%] sm:max-w-[18.75rem] bg-accent-500 hover:bg-accent-600 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
           >
             Join the Community Today
           </button>
