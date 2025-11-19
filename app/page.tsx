@@ -47,48 +47,77 @@ export default function Home() {
     return null;
   };
 
-  // Restore scroll position on mobile after reload
+  // Restore exact scroll position on page load
   useEffect(() => {
     if (typeof window === 'undefined') return;
     
-    const isMobile = window.innerWidth < 768; // md breakpoint
-    if (!isMobile) return;
-
-    const lastSection = localStorage.getItem('lastViewedSection');
-    if (lastSection) {
-      // Wait for page to fully load
+    // First, handle hash navigation if URL has a hash
+    if (window.location.hash) {
+      const hash = window.location.hash.substring(1); // Remove #
       const timer = setTimeout(() => {
-        const element = document.getElementById(lastSection);
+        const element = document.getElementById(hash);
         if (element) {
           const headerHeight = 120;
           const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
           const offsetPosition = elementPosition - headerHeight;
           window.scrollTo({
             top: offsetPosition,
-            behavior: 'auto' // Instant scroll on reload
+            behavior: 'auto'
           });
         }
       }, 100);
-
       return () => clearTimeout(timer);
+    }
+    
+    // Otherwise, restore saved scroll position
+    const savedScrollPosition = sessionStorage.getItem('scrollPosition');
+    if (savedScrollPosition) {
+      const scrollY = parseInt(savedScrollPosition, 10);
+      
+      // Wait for page to fully render
+      const restoreScroll = () => {
+        window.scrollTo({
+          top: scrollY,
+          behavior: 'auto'
+        });
+      };
+      
+      // Try when DOM is ready
+      if (document.readyState === 'complete') {
+        restoreScroll();
+      } else {
+        window.addEventListener('load', restoreScroll);
+      }
+      
+      // Also try after delays to ensure DOM is ready (for dynamic content)
+      const timer1 = setTimeout(restoreScroll, 100);
+      const timer2 = setTimeout(restoreScroll, 300);
+      
+      return () => {
+        window.removeEventListener('load', restoreScroll);
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+      };
     }
   }, []);
 
-  // Track scroll position and save last viewed section on mobile
+  // Save scroll position on scroll
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    
-    const isMobile = window.innerWidth < 768; // md breakpoint
-    if (!isMobile) return;
 
     let ticking = false;
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
+          // Save exact scroll position
+          sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+          
+          // Also save current section for reference
           const currentSection = getCurrentSection();
           if (currentSection) {
-            localStorage.setItem('lastViewedSection', currentSection);
+            sessionStorage.setItem('lastViewedSection', currentSection);
           }
+          
           ticking = false;
         });
         ticking = true;
@@ -96,6 +125,9 @@ export default function Home() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Save initial position
+    sessionStorage.setItem('scrollPosition', window.scrollY.toString());
 
     return () => {
       window.removeEventListener('scroll', handleScroll);

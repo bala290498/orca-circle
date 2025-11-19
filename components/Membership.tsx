@@ -6,44 +6,7 @@ import GradientText from "@/components/GradientText";
 export default function Membership() {
   const { openModal } = useModal();
 
-  const features = [
-    {
-      text: "No Hidden Costs",
-      icon: (
-        <svg
-          className="w-6 h-6 text-primary-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-          />
-        </svg>
-      ),
-    },
-    {
-      text: "100% Free Forever",
-      icon: (
-        <svg
-          className="w-6 h-6 text-primary-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
-    },
-  ];
+  const features = [];
 
   return (
     <section id="membership" className="py-12 sm:py-16 md:py-20 bg-white">
@@ -62,26 +25,28 @@ export default function Membership() {
               No payments.
             </GradientText>
           </h2>
-          <p className="text-gray-700 leading-relaxed max-w-[90%] sm:max-w-2xl mx-auto mb-8 sm:mb-10 px-2" style={{ fontSize: 'clamp(1rem, 1.5vw + 0.5rem, 1.25rem)' }}>
+          <p className="text-gray-700 leading-relaxed max-w-[90%] sm:max-w-2xl mx-auto mb-4 sm:mb-6 px-2" style={{ fontSize: 'clamp(1rem, 1.5vw + 0.5rem, 1.25rem)' }}>
             Stay Active and Grow With Your Community
           </p>
           
           {/* Features - Simple List */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-10 px-2">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-3"
-              >
-                <div className="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0">
-                  {feature.icon}
+          {features.length > 0 && (
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-10 px-2">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-3"
+                >
+                  <div className="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0">
+                    {feature.icon}
+                  </div>
+                  <span className="text-gray-700 font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
+                    {feature.text}
+                  </span>
                 </div>
-                <span className="text-gray-700 font-medium" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.5rem, 1rem)' }}>
-                  {feature.text}
-                </span>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           {/* Join Button */}
           <button

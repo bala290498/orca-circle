@@ -79,17 +79,14 @@ export default function MemberBenefits() {
           <div className="max-w-4xl mx-auto">
             {/* Heading */}
             <div className="mb-6 sm:mb-8">
-              <h2 className="font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontSize: 'clamp(1.25rem, 3vw + 1rem, 2.25rem)' }}>
+              <h2 className="font-bold text-gray-900 mb-4 sm:mb-6 text-center" style={{ fontSize: 'clamp(1.25rem, 3vw + 1rem, 2.25rem)' }}>
                 Member Benefits
               </h2>
-              <h3 className="font-bold text-gray-900" style={{ fontSize: 'clamp(1rem, 2.5vw + 0.75rem, 1.5rem)' }}>
-                Your Activity = Real Rewards
-              </h3>
             </div>
 
             {/* Content */}
             <div>
-              <p className="text-gray-700 leading-relaxed mb-6 sm:mb-8" style={{ fontSize: 'clamp(1rem, 1.5vw + 0.5rem, 1.25rem)' }}>
+              <p className="text-gray-700 leading-relaxed mb-6 sm:mb-8 text-center" style={{ fontSize: 'clamp(1rem, 1.5vw + 0.5rem, 1.25rem)' }}>
                 Members enjoy multiple high-value benefits, including exclusive rewards, special discounts, business and personal growth opportunities, strong community support, and constant networking with like-minded people — all designed to help you grow faster together.
               </p>
               

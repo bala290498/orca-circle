@@ -19,6 +19,10 @@ export default function Testimonials() {
   
   // Generate avatar URL based on name
   const getAvatarUrl = (name: string) => {
+    // Use specific background color for Prabhu to avoid dark red
+    if (name === "Prabhu") {
+      return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=56&background=3B82F6&color=fff&bold=true&rounded=true`;
+    }
     return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=56&background=random&color=fff&bold=true&rounded=true`;
   };
 

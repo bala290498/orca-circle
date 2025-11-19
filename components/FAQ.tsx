@@ -17,12 +17,12 @@ export default function FAQ() {
     {
       question: "How much time is needed?",
       answer:
-        "Just 5–15 minutes a day. Members perform small engagement tasks like following, liking, commenting, and sharing. It's quick and easy.",
+        "Just 5–15 minutes a day. Members perform small engagement tasks like following, liking, and commenting. It's quick and easy.",
     },
     {
       question: "Are rewards real?",
       answer:
-        "Yes — Members receive genuine Flipkart gift vouchers, Amazon gift vouchers, platform subscriptions, and more.",
+        "Yes — Members receive genuine Flipkart gift cards, Amazon gift cards, platform subscriptions, and more.",
     },
     {
       question: "Can I promote my business?",
