@@ -1,48 +1,39 @@
+"use client"
+
+import React from "react"
+
+import { cn } from "@/lib/utils"
+
 interface AvatarCirclesProps {
-  numPeople: number;
-  avatarUrls: Array<{
-    firstName: string;
-    lastName: string;
-  }>;
+  className?: string
+  numPeople?: number
+  avatarUrls: string[]
 }
 
-export function AvatarCircles({ numPeople, avatarUrls }: AvatarCirclesProps) {
-  const visibleAvatars = avatarUrls.slice(0, 12);
-  const remainingCount = numPeople - visibleAvatars.length;
-
-  const getInitials = (firstName: string, lastName: string) => {
-    return `${firstName.charAt(0).toUpperCase()}${lastName.charAt(0).toUpperCase()}`;
-  };
-
-  const getRandomColor = (index: number) => {
-    const colors = [
-      'bg-primary-500',
-      'bg-secondary-500',
-      'bg-accent-500',
-      'bg-purple-500',
-      'bg-amber-500',
-      'bg-slate-500',
-    ];
-    return colors[index % colors.length];
-  };
-
+const AvatarCircles = ({
+  numPeople,
+  className,
+  avatarUrls,
+}: AvatarCirclesProps) => {
   return (
-    <div className="flex items-center justify-center -space-x-8">
-      {visibleAvatars.map((avatar, index) => (
-        <div
+    <div className={cn("z-10 flex -space-x-4 rtl:space-x-reverse", className)}>
+      {avatarUrls.map((url, index) => (
+        <img
           key={index}
-          className="relative block transition-transform hover:scale-110 hover:z-10"
-        >
-          <div className={`flex items-center justify-center w-10 h-10 rounded-full border-2 border-white ${getRandomColor(index)} text-white font-semibold text-sm shadow-md`}>
-            {getInitials(avatar.firstName, avatar.lastName)}
-          </div>
-        </div>
+          className="h-10 w-10 rounded-full border-2 border-white dark:border-gray-800"
+          src={url}
+          width={40}
+          height={40}
+          alt={`Avatar ${index + 1}`}
+        />
       ))}
-      {remainingCount > 0 && (
-        <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white bg-primary-100 text-primary-700 font-semibold text-sm shadow-md">
-          +{remainingCount}
-        </div>
-      )}
+      <div
+        className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-gray-100 text-center text-xs font-medium text-black hover:bg-gray-200 dark:border-gray-800"
+      >
+        +{numPeople}
+      </div>
     </div>
-  );
+  )
 }
+
+export { AvatarCircles }

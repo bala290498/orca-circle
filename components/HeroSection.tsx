@@ -1,69 +1,21 @@
 "use client";
 
-import { AvatarCircles } from "@/registry/magicui/avatar-circles";
 import { useModal } from "@/contexts/ModalContext";
+import { AvatarCircles } from "@/registry/magicui/avatar-circles";
 
-const avatars = [
-  {
-    firstName: "Walsh",
-    lastName: "Smith",
-  },
-  {
-    firstName: "Sarah",
-    lastName: "Johnson",
-  },
-  {
-    firstName: "Michael",
-    lastName: "Brown",
-  },
-  {
-    firstName: "Emily",
-    lastName: "Davis",
-  },
-  {
-    firstName: "Ravid",
-    lastName: "Wilson",
-  },
-  {
-    firstName: "Jessica",
-    lastName: "Martinez",
-  },
-  {
-    firstName: "Robert",
-    lastName: "Taylor",
-  },
-  {
-    firstName: "Amanda",
-    lastName: "Anderson",
-  },
-  {
-    firstName: "Christopher",
-    lastName: "Thomas",
-  },
-  {
-    firstName: "Lisa",
-    lastName: "Jackson",
-  },
-  {
-    firstName: "Daniel",
-    lastName: "White",
-  },
-  {
-    firstName: "Michelle",
-    lastName: "Harris",
-  },
-  {
-    firstName: "James",
-    lastName: "Moore",
-  },
-  {
-    firstName: "Jennifer",
-    lastName: "Lee",
-  },
-  {
-    firstName: "William",
-    lastName: "Garcia",
-  },
+const avatarUrls = [
+  "https://ui-avatars.com/api/?name=John+Smith&background=3B82F6&color=fff",
+  "https://ui-avatars.com/api/?name=Sarah+Johnson&background=6366F1&color=fff",
+  "https://ui-avatars.com/api/?name=Michael+Brown&background=10B981&color=fff",
+  "https://ui-avatars.com/api/?name=Emily+Davis&background=A855F7&color=fff",
+  "https://ui-avatars.com/api/?name=David+Wilson&background=F59E0B&color=fff",
+  "https://ui-avatars.com/api/?name=Jessica+Martinez&background=64748B&color=fff",
+  "https://ui-avatars.com/api/?name=Robert+Taylor&background=3B82F6&color=fff",
+  "https://ui-avatars.com/api/?name=Amanda+Anderson&background=6366F1&color=fff",
+  "https://ui-avatars.com/api/?name=Christopher+Thomas&background=10B981&color=fff",
+  "https://ui-avatars.com/api/?name=Lisa+Jackson&background=A855F7&color=fff",
+  "https://ui-avatars.com/api/?name=Daniel+White&background=F59E0B&color=fff",
+  "https://ui-avatars.com/api/?name=Michelle+Harris&background=64748B&color=fff",
 ];
 
 export default function HeroSection() {
@@ -88,7 +40,7 @@ export default function HeroSection() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Avatar Circles */}
           <div className="mb-6 sm:mb-8 flex justify-center">
-            <AvatarCircles numPeople={112} avatarUrls={avatars} />
+            <AvatarCircles numPeople={100} avatarUrls={avatarUrls} />
           </div>
 
           {/* Headline */}

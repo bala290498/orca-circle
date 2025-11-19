@@ -109,7 +109,7 @@ export default function HeroVisual() {
         </div>
         <div className="absolute -bottom-4 -left-4 hidden sm:block">
           <div className="flex items-center space-x-2 bg-white rounded-full px-4 py-2 shadow-lg border border-gray-100">
-            <div className="flex -space-x-4">
+            <div className="flex -space-x-5">
               {avatars.slice(0, 6).map((avatar, idx) => {
                 const getInitials = (firstName: string, lastName: string) => {
                   return `${firstName.charAt(0).toUpperCase()}${lastName.charAt(0).toUpperCase()}`;
