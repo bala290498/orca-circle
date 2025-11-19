@@ -8,24 +8,6 @@ export default function Membership() {
 
   const features = [
     {
-      text: "100% Free Forever",
-      icon: (
-        <svg
-          className="w-6 h-6 text-primary-600"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      ),
-    },
-    {
       text: "No Hidden Costs",
       icon: (
         <svg
@@ -44,7 +26,7 @@ export default function Membership() {
       ),
     },
     {
-      text: "No Subscription",
+      text: "100% Free Forever",
       icon: (
         <svg
           className="w-6 h-6 text-primary-600"
@@ -56,7 +38,7 @@ export default function Membership() {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
       ),
@@ -81,12 +63,12 @@ export default function Membership() {
             Stay active and Grow with your community
           </p>
           
-          {/* Features - Flat Cards in Horizontal Line */}
+          {/* Features - Simple List */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-10 px-2">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white p-4 sm:p-6 border border-gray-200 hover:border-primary-300 transition-all duration-300 flex items-center gap-3 w-full sm:w-auto"
+                className="flex items-center gap-3"
               >
                 <div className="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 flex-shrink-0">
                   {feature.icon}

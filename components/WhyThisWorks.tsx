@@ -48,8 +48,8 @@ export default function WhyThisWorks() {
         <div className="max-w-7xl mx-auto">
           {/* Two-column layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            {/* Left Column: Heading */}
-            <div className="flex flex-col lg:sticky lg:top-24">
+            {/* Left Column: Heading - Sticky on desktop */}
+            <div className="flex flex-col lg:sticky lg:top-24 lg:self-start">
               <h2 className="font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontSize: 'clamp(1.25rem, 3vw + 1rem, 2.25rem)' }}>
                 Why This Works
               </h2>
