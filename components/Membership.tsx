@@ -6,7 +6,7 @@ import GradientText from "@/components/GradientText";
 export default function Membership() {
   const { openModal } = useModal();
 
-  const features = [];
+  const features: Array<{ text: string; icon: JSX.Element }> = [];
 
   return (
     <section id="membership" className="py-12 sm:py-16 md:py-20 bg-white">
