@@ -63,7 +63,7 @@ export default function CommunityStructure() {
               <div className="bg-white rounded-lg p-4 sm:p-6 w-full h-full flex flex-col border border-gray-200">
                 <div className="flex flex-col items-center justify-center gap-3 sm:gap-4 flex-1">
                 {/* GH Circle - Separate line */}
-                <div className="bg-primary-600 text-white rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center font-bold text-xs sm:text-sm md:text-base">
+                <div className="bg-primary-300 text-primary-900 rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center font-bold text-xs sm:text-sm md:text-base">
                   GH
                 </div>
                 

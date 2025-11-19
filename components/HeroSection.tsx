@@ -84,10 +84,10 @@ export default function HeroSection() {
               Join the Community
             </button>
             <button
-              onClick={() => scrollToSection("how-it-works")}
+              onClick={() => scrollToSection("benefits")}
               className="w-full max-w-[90%] sm:max-w-[16rem] border-2 border-primary-600 text-primary-600 hover:bg-primary-50 font-semibold py-2 px-5 rounded-full transition-all duration-300 transform hover:scale-105" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
             >
-              Learn How It Works
+              View Benefits
             </button>
           </div>
 

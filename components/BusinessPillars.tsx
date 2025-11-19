@@ -43,7 +43,7 @@ export default function BusinessPillars() {
             {pillars.map((pillar, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 hover:border-primary-300 hover:shadow-md transition-all duration-300 flex flex-col"
+                className="bg-white rounded-2xl p-6 sm:p-8 border-2 border-primary-300 hover:border-primary-500 hover:shadow-md transition-all duration-300 flex flex-col"
               >
                 <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-primary-50 rounded-full mb-4 sm:mb-6 flex-shrink-0 mx-auto">
                   {pillar.icon}

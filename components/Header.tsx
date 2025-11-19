@@ -85,13 +85,6 @@ export default function Header() {
           {/* Navigation Links - Desktop */}
           <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
             <button
-              onClick={() => scrollToSection("how-it-works")}
-              className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
-              style={{ fontSize: 'clamp(0.75rem, 1vw + 0.5rem, 0.875rem)' }}
-            >
-              How it works
-            </button>
-            <button
               onClick={() => scrollToSection("benefits")}
               className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
               style={{ fontSize: 'clamp(0.75rem, 1vw + 0.5rem, 0.875rem)' }}
@@ -152,13 +145,6 @@ export default function Header() {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-white">
             <div className="px-4 pt-2 pb-4">
-              <button
-                onClick={() => scrollToSection("how-it-works")}
-                className="block w-full text-center px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors font-medium"
-                style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
-              >
-                How it works
-              </button>
               <button
                 onClick={() => scrollToSection("benefits")}
                 className="block w-full text-center px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors font-medium"

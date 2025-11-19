@@ -12,8 +12,8 @@ export default function Footer() {
               <h3 className="text-secondary-500 font-semibold text-sm sm:text-base mb-4">About</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>
-                  <a href="#how-it-works" className="text-gray-600 hover:text-secondary-500 transition-colors">
-                    How it works
+                  <a href="#benefits" className="text-gray-600 hover:text-secondary-500 transition-colors">
+                    Benefits
                   </a>
                 </li>
                 <li>
@@ -35,7 +35,7 @@ export default function Footer() {
               <h3 className="text-secondary-500 font-semibold text-sm sm:text-base mb-4">Community</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>
-                  <a href="#how-it-works" className="text-gray-600 hover:text-secondary-500 transition-colors">
+                  <a href="#membership" className="text-gray-600 hover:text-secondary-500 transition-colors">
                     Join Community
                   </a>
                 </li>

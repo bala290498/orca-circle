@@ -5,7 +5,7 @@ import HeroSection from '@/components/HeroSection'
 import ProblemSection from '@/components/ProblemSection'
 import SolutionSection from '@/components/SolutionSection'
 import WhyThisWorks from '@/components/WhyThisWorks'
-import HowItWorks from '@/components/HowItWorks'
+import HowCommunityWorks from '@/components/HowCommunityWorks'
 import MemberBenefits from '@/components/MemberBenefits'
 import BusinessPillars from '@/components/BusinessPillars'
 import Membership from '@/components/Membership'
@@ -27,7 +27,6 @@ export default function Home() {
     if (typeof window === 'undefined') return null;
     
     const sections = [
-      'how-it-works',
       'benefits',
       'membership',
       'testimonials',
@@ -135,7 +134,7 @@ export default function Home() {
       <WhyThisWorks />
 
       {/* 5. How the Community Works */}
-      <HowItWorks />
+      <HowCommunityWorks />
 
       {/* 6. Member Benefits */}
       <MemberBenefits />

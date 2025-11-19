@@ -21,12 +21,23 @@ export default function FinalCTA() {
             >
               Join the Community
             </button>
-            <a
-              href="#how-it-works"
+            <button
+              onClick={() => {
+                const element = document.getElementById("benefits");
+                if (element) {
+                  const headerHeight = 120;
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                  const offsetPosition = elementPosition - headerHeight;
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                  });
+                }
+              }}
               className="w-full max-w-[90%] sm:max-w-[18.75rem] bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-2.5 px-6 rounded-full transition-all duration-300 flex items-center justify-center" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
             >
-              Learn How It Works
-            </a>
+              View Benefits
+            </button>
           </div>
         </div>
       </div>
