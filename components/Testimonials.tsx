@@ -150,7 +150,7 @@ export default function Testimonials() {
               </div>
             </div>
             <div 
-              className="mb-3 sm:mb-4 px-2"
+              className="mb-0 px-2"
               style={{ 
                 height: '180px',
                 position: 'relative',
@@ -202,7 +202,7 @@ export default function Testimonials() {
                 ))}
               </div>
             </div>
-            <div className="-m-1.5 flex flex-wrap justify-center px-2">
+            <div className="-mt-4 -mx-1.5 -mb-1.5 flex flex-wrap justify-center px-2">
               {testimonials.map((testimonial, index) => (
                 <button
                   key={index}
