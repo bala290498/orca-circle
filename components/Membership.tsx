@@ -56,7 +56,10 @@ export default function Membership() {
               showBorder={false}
               className="font-bold"
             >
-              Free Membership. No payments.
+              Free Membership.
+              <br className="sm:hidden" />
+              <span className="hidden sm:inline"> </span>
+              No payments.
             </GradientText>
           </h2>
           <p className="text-gray-700 leading-relaxed max-w-[90%] sm:max-w-2xl mx-auto mb-8 sm:mb-10 px-2" style={{ fontSize: 'clamp(1rem, 1.5vw + 0.5rem, 1.25rem)' }}>
