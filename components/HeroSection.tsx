@@ -69,13 +69,13 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center items-center">
             <button
               onClick={openModal}
-              className="w-full max-w-[90%] sm:max-w-[18.75rem] bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
+              className="w-full max-w-[90%] sm:max-w-[16rem] bg-gradient-to-r from-primary-600 to-secondary-500 hover:from-primary-700 hover:to-secondary-600 text-white font-semibold py-2 px-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
             >
               Join the Community
             </button>
             <button
               onClick={() => scrollToSection("how-it-works")}
-              className="w-full max-w-[90%] sm:max-w-[18.75rem] border-2 border-primary-600 text-primary-600 hover:bg-primary-50 font-semibold py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
+              className="w-full max-w-[90%] sm:max-w-[16rem] border-2 border-primary-600 text-primary-600 hover:bg-primary-50 font-semibold py-2 px-5 rounded-full transition-all duration-300 transform hover:scale-105" style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.5rem, 1rem)' }}
             >
               Learn How It Works
             </button>
