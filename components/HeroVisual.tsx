@@ -1,22 +1,5 @@
 "use client";
 
-import { AvatarCircles } from "@/registry/magicui/avatar-circles";
-
-const avatarUrls = [
-  "https://ui-avatars.com/api/?name=John+Smith&background=3B82F6&color=fff",
-  "https://ui-avatars.com/api/?name=Sarah+Johnson&background=6366F1&color=fff",
-  "https://ui-avatars.com/api/?name=Michael+Brown&background=10B981&color=fff",
-  "https://ui-avatars.com/api/?name=Emily+Davis&background=A855F7&color=fff",
-  "https://ui-avatars.com/api/?name=David+Wilson&background=F59E0B&color=fff",
-  "https://ui-avatars.com/api/?name=Jessica+Martinez&background=64748B&color=fff",
-  "https://ui-avatars.com/api/?name=Robert+Taylor&background=3B82F6&color=fff",
-  "https://ui-avatars.com/api/?name=Amanda+Anderson&background=6366F1&color=fff",
-  "https://ui-avatars.com/api/?name=Christopher+Thomas&background=10B981&color=fff",
-  "https://ui-avatars.com/api/?name=Lisa+Jackson&background=A855F7&color=fff",
-  "https://ui-avatars.com/api/?name=Daniel+White&background=F59E0B&color=fff",
-  "https://ui-avatars.com/api/?name=Michelle+Harris&background=64748B&color=fff",
-];
-
 const avatars = [
   {
     firstName: "John",
@@ -119,9 +102,6 @@ export default function HeroVisual() {
         </div>
 
         {/* Floating People Avatars */}
-        <div className="absolute -top-4 -right-4 hidden sm:block">
-          <AvatarCircles numPeople={20} avatarUrls={avatarUrls} />
-        </div>
         <div className="absolute -bottom-4 -left-4 hidden sm:block">
           <div className="flex items-center space-x-2 bg-white rounded-full px-4 py-2 shadow-lg border border-gray-100">
             <div className="flex -space-x-5">

@@ -1,22 +1,6 @@
 "use client";
 
 import { useModal } from "@/contexts/ModalContext";
-import { AvatarCircles } from "@/registry/magicui/avatar-circles";
-
-const avatarUrls = [
-  "https://ui-avatars.com/api/?name=John+Smith&background=3B82F6&color=fff",
-  "https://ui-avatars.com/api/?name=Sarah+Johnson&background=6366F1&color=fff",
-  "https://ui-avatars.com/api/?name=Michael+Brown&background=10B981&color=fff",
-  "https://ui-avatars.com/api/?name=Emily+Davis&background=A855F7&color=fff",
-  "https://ui-avatars.com/api/?name=David+Wilson&background=F59E0B&color=fff",
-  "https://ui-avatars.com/api/?name=Jessica+Martinez&background=64748B&color=fff",
-  "https://ui-avatars.com/api/?name=Robert+Taylor&background=3B82F6&color=fff",
-  "https://ui-avatars.com/api/?name=Amanda+Anderson&background=6366F1&color=fff",
-  "https://ui-avatars.com/api/?name=Christopher+Thomas&background=10B981&color=fff",
-  "https://ui-avatars.com/api/?name=Lisa+Jackson&background=A855F7&color=fff",
-  "https://ui-avatars.com/api/?name=Daniel+White&background=F59E0B&color=fff",
-  "https://ui-avatars.com/api/?name=Michelle+Harris&background=64748B&color=fff",
-];
 
 export default function HeroSection() {
   const { openModal } = useModal();
@@ -34,13 +18,51 @@ export default function HeroSection() {
     }
   };
 
+  const avatars = [
+    { firstName: "John", lastName: "Smith" },
+    { firstName: "Sarah", lastName: "Johnson" },
+    { firstName: "Michael", lastName: "Brown" },
+    { firstName: "Emily", lastName: "Davis" },
+    { firstName: "David", lastName: "Wilson" },
+    { firstName: "Jessica", lastName: "Martinez" },
+    { firstName: "Robert", lastName: "Taylor" },
+    { firstName: "Amanda", lastName: "Anderson" },
+  ];
+
+  const colors = [
+    'bg-primary-500',
+    'bg-secondary-500',
+    'bg-accent-500',
+    'bg-purple-500',
+    'bg-amber-500',
+    'bg-slate-500',
+    'bg-primary-600',
+    'bg-secondary-600',
+  ];
+
+  const getInitials = (firstName: string, lastName: string) => {
+    return `${firstName.charAt(0).toUpperCase()}${lastName.charAt(0).toUpperCase()}`;
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-background pt-20 sm:pt-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Avatar Circles */}
-          <div className="mb-6 sm:mb-8 flex justify-center">
-            <AvatarCircles numPeople={100} avatarUrls={avatarUrls} />
+          <div className="mb-6 sm:mb-8 flex justify-center items-center">
+            <div className="flex -space-x-3 sm:-space-x-4">
+              {avatars.map((avatar, index) => (
+                <div
+                  key={index}
+                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full ${colors[index % colors.length]} text-white text-xs sm:text-sm font-semibold flex items-center justify-center border-2 border-white flex-shrink-0`}
+                >
+                  {getInitials(avatar.firstName, avatar.lastName)}
+                </div>
+              ))}
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 border-2 border-white text-black text-xs sm:text-sm font-semibold flex items-center justify-center flex-shrink-0">
+                +100
+              </div>
+            </div>
           </div>
 
           {/* Headline */}
